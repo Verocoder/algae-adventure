@@ -48,7 +48,7 @@ export default class Engine {
       }
 
       //this seems janky?
-      for (index in remove_indices){
+      for (var index in remove_indices){
          this.ongoingEffects.splice(index);
       }
 
