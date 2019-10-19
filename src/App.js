@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
-import 'semantic-ui-css/semantic.min.css'
+import React, { useState, useEffect } from 'react'
+import 'semantic-ui-less/semantic.less'
 import { Button, Sidebar, Statistic, Container, Divider, Embed } from 'semantic-ui-react'
 
-export default () => {
+const OptionsPage = () => {
   const [value, setValue] = useState(1234)
 
   return <div style={{ width: '100vw', height: '100vh' }}>
@@ -15,8 +15,8 @@ export default () => {
       </Statistic.Group>
     </Sidebar>
 
-    <div style={{ marginRight: 260, padding: 20 }}>
-      <Embed icon='play' url='http://techslides.com/demos/sample-videos/small.mp4' />
+    <div style={{ maxWidth: 1000, marginRight: 260, padding: 20 }}>
+      <Embed autoplay aspectRatio='16:9' icon='play' url='http://techslides.com/demos/sample-videos/small.mp4' />
 
       <Divider />
 
@@ -31,4 +31,8 @@ export default () => {
       </Button.Group>
     </div>
   </div>
+}
+
+export default () => {
+  return <OptionsPage />
 }
