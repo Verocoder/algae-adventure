@@ -1,10 +1,13 @@
 const gameplay = {
   warmClimate: {
     title: "Warm climate",
+    description: "THis is a warm climate. as a bloom ou will do super well here"
     videoLocation: "drive://warm.mp4",
     points: 10,
     leftButtonKey: "",
     rightButtonKey: "",
+    leftButtonChoiceText: "",
+    rightButtonChoiceText: "",
     HelpText: "OMG this is a warm climate"
   },
   coldClimate: {
@@ -13,6 +16,8 @@ const gameplay = {
     points: -5,
     leftButtonKey: "",
     rightButtonKey: "",
+    leftButtonChoiceText: "",
+    rightButtonChoiceText: "",
     HelpText: "Oh no this is a cold climate"
   }
 };
