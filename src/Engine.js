@@ -1,8 +1,9 @@
+import data from './gameplay.js';
+
 class Engine {
   constructor(starting_size, location_name) {
     //static imports
     // sort out getting data
-    this.data = require("./data.json");
     //constructor variables
     this.starting_size = starting_size;
     this.location = data.regions[location_name];
