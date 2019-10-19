@@ -9,7 +9,12 @@ const gameplay = {
       "growth_factor":4, 
       "resource_availability":5
   },
-  climates:[
+  climate:{
+    "title": "Cimate",
+    eligible_areas:["river","sea"],
+    "description": "",
+    "helpText": "",
+    options:[
     {
       title:"warm",
       description: "THis is a warm climate. as a bloom ou will do super well here",
@@ -19,7 +24,7 @@ const gameplay = {
       description: "THis is a warm climate. as a bloom ou will do super well here",
       effect:{"algae_survive":0.8, "growth_factor": 1, "long_term_growth_factor":0.5}
     }
-  ],
+  ]},
   choices: [
     {
       "title": "Some birds nest",
