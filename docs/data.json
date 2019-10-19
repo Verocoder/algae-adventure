@@ -1,0 +1,16 @@
+{
+    // types of place
+    //need info added
+    "regions":{
+        "shallow_sea":{
+            "algal_ceiling":10000, 
+            "growth_factor":4, 
+            "resource_availability":5
+        }
+    },
+    //types of things that could happen some good some bad
+    //each is a factor by which the base figures are multipled
+    "events":{
+        "wash_off":{"algae_survive":0.8, "growth_factor": 1, "resource_availability":5}
+    }
+}
