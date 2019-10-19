@@ -8,7 +8,7 @@ export default class DecisionPrompt extends React.Component {
         for(let i = 0; i < this.props.activeQuestion.options.length; i++){
             let question = this.props.activeQuestion.options[i]
             buttons.push(
-            <Popup trigger={<Button primary>{question.title}</Button>}>
+            <Popup trigger={<Button primary onClick={(e) => this.props.onSelect(e, question, i)}>{question.title}</Button>}>
                 <Popup.Header>{question.title}</Popup.Header>
                 <Popup.Content>
                 {question.description}
