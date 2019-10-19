@@ -49,7 +49,7 @@ class Engine {
 
       //this seems janky?
       for (index in remove_indices){
-         this.ongoingEffects.reduce(index);
+         this.ongoingEffects.splice(index);
       }
 
       return (currentAlgae * iteration_algae_survive) ^ (this.growth_factor * iteration_growth_factor);
@@ -65,13 +65,8 @@ class Engine {
     build_question_list(){
       let question_list = [];
       question_list.push(data.climate);
-      let random_questions = data.choices.sort(() => Math.random() - 0.5);
-      question_list.push(random_questions);
-      for (choice in data.choices){
-        if (choice.eligible_areas.includes(this.location_name)){
-          question_list.push(choice);
-        }
-      }
+      let random_questions = data.choices.filter(() => choice.eligible_areas.includes(this.location_name)).sort(() => Math.random() - 0.5);
+      Array.prototype.push.apply(question_list, random_questions);
       return question_list;
     }
 
