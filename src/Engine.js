@@ -1,4 +1,4 @@
-import data from './gameplay.js';
+import * as gameplay from './gameplay'
 
 class Engine {
 

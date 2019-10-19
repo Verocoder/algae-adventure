@@ -3,6 +3,7 @@ const gameplay = {
     shallow_sea: {
       title: "Shallow Sea",
       description: "A shallow sea area near the coast",
+      media:"",
       helpText:
         "Shallow sea areas have some kind of feature that make them either good or not good for growing algae",
       image: "location of image",
@@ -13,28 +14,32 @@ const gameplay = {
   },
   climate: {
     title: "Cimate",
-    eligible_areas: ["river", "sea"],
-    description: "What kind of weather do you feel your algae would bloom well in?",
+    media:"",
+    // all areas
+    eligible_areas: ["river", "shallow_sea"],
+    description: "",
     helpText: "",
     options: [
       {
-        title: "Warm",
+        title: "warm",
+        media:"",
         description:
           "THis is a warm climate. as a bloom ou will do super well here",
         effect: {
-          algae_survive: 0.8,
-          growth_factor: 1,
-          long_term_growth_factor: 5
+          duration:-1,
+          algae_survive: 1,
+          growth_factor: 5
         }
       },
       {
-        title: "Cold",
+        title: "cold",
+        media:"",
         description:
           "THis is a warm climate. as a bloom ou will do super well here",
         effect: {
-          algae_survive: 0.8,
-          growth_factor: 1,
-          long_term_growth_factor: 0.5
+          duration:-1,
+          algae_survive: 1,
+          growth_factor: 0.5
         }
       }
     ]
@@ -42,26 +47,29 @@ const gameplay = {
   choices: [
     {
       title: "Some birds nest",
-      eligible_areas: ["river"],
+      media:"",
+      eligible_areas: ["river", "shallow_sea"],
       description: "",
       helpText: "",
       options: [
         {
           title: "shoe them away",
+          media:"",
           description: "",
           effect: {
+            duration:0,
             algae_survive: 1,
-            growth_factor: 1,
-            long_term_growth_factor: 1
+            growth_factor: 1
           }
         },
         {
           title: "Let them stay",
+          media:"",
           description: "",
           effect: {
-            algae_survive: 0.8,
-            growth_factor: 5,
-            long_term_growth_factor: 1
+            duration:4,
+            algae_survive: 1,
+            growth_factor: 5
           }
         }
       ]
@@ -70,14 +78,14 @@ const gameplay = {
 
   random_events: [
     {
-      title: "there was a warm spell",
+      title: "There was a warm spell",
       eligible_areas: ["river", "shallow_sea", "deep_sea"],
       description: "",
       helpText: "",
       effect: {
+        duration:2,
         algae_survive: 1,
-        growth_factor: 2,
-        long_term_growth_factor: 1
+        growth_factor: 2
       }
     },{
       title: "there was a big storm",
@@ -85,9 +93,9 @@ const gameplay = {
       description: "",
       helpText: "",
       effect: {
+        duration:1,
         algae_survive: 0.6,
-        growth_factor: 0.5,
-        long_term_growth_factor: 1
+        growth_factor: 0.5
       }
     }
   ]
