@@ -10,7 +10,7 @@ export default () => {
       <Statistic.Group widths='1' style={{ paddingTop: 20 }}>
         <Statistic>
           <Statistic.Value>{value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</Statistic.Value>
-          <Statistic.Label>km2</Statistic.Label>
+          <Statistic.Label>km&sup2;</Statistic.Label>
         </Statistic>
       </Statistic.Group>
     </Sidebar>
