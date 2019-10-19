@@ -1,2 +1,3 @@
 # algae-adventure
+Follow the adventres of Algy the conquering cyanobacteria
 #spaceapps #spaceappsexeter 2019
