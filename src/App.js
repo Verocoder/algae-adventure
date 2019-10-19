@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import 'semantic-ui-css/semantic.min.css'
-import { Button, Sidebar, Statistic, Container, Divider } from 'semantic-ui-react'
+import { Button, Sidebar, Statistic, Container, Divider, Embed } from 'semantic-ui-react'
 
 export default () => {
   const [value, setValue] = useState(1234)
@@ -16,9 +16,7 @@ export default () => {
     </Sidebar>
 
     <div style={{ marginRight: 260, padding: 20 }}>
-      <video controls style={{ width: '100%' }}>
-        <source src='http://techslides.com/demos/sample-videos/small.mp4' type='video/mp4' />
-      </video>
+      <Embed icon='play' url='http://techslides.com/demos/sample-videos/small.mp4' />
 
       <Divider />
 
