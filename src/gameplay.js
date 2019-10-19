@@ -7,7 +7,6 @@ const gameplay = {
       image: "https://cff2.earth.com/uploads/2019/07/26121452/Algae-may-have-joined-with-fungi-to-give-rise-to-the-first-terrestrial-plants-730x410.jpg",
       helpText:
         "Shallow sea areas have some kind of feature that make them either good or not good for growing algae",
-      image: "location of image",
       algal_ceiling: 10000,
       growth_factor: 4,
       resource_availability: 5
