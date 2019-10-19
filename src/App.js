@@ -1,34 +1,87 @@
 import React, { useState } from 'react'
 import 'semantic-ui-css/semantic.min.css'
-import { Button, Sidebar, Statistic, Container, Divider, Embed } from 'semantic-ui-react'
+import { Button, Sidebar, Statistic, Container, Divider, Embed, Popup } from 'semantic-ui-react'
+import Engine from './Engine'
 
-export default () => {
-  const [value, setValue] = useState(1234)
+export default class App extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      selectedLocation: null,
+      activeQuestion: null,
+      weekNumber: 0,
+      nextWeekAdvance: 0,
+      algaeQuantity: 1,
+      videoPlaying: null,
+      ongoingMultipliers: [],
+    };
 
-  return <div style={{ width: '100vw', height: '100vh' }}>
-    <Sidebar direction='right' visible >
-      <Statistic.Group widths='1' style={{ paddingTop: 20 }}>
-        <Statistic>
-          <Statistic.Value>{value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</Statistic.Value>
-          <Statistic.Label>km&sup2;</Statistic.Label>
-        </Statistic>
-      </Statistic.Group>
-    </Sidebar>
+    this.engine = new Engine();
+  
+  }
 
-    <div style={{ marginRight: 260, padding: 20 }}>
-      <Embed icon='play' url='http://techslides.com/demos/sample-videos/small.mp4' />
+componentDidMount(){
+  this.advance()
+}
 
-      <Divider />
+  advance(){
+    console.log(this.engine.nextQuestion());
+    this.setState({activeQuestion: this.engine.nextQuestion()});
+    console.log(this.state)
+  }
 
-      <Container>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </Container>
+  
 
-      <Button.Group size='huge' fluid style={{ padding: '30px 0px' }}>
-        <Button>A</Button>
-        <Button.Or />
-        <Button>B</Button>
-      </Button.Group>
-    </div>
-  </div>
+  render() {
+    let activeQuestion;
+    if(this.state.activeQuestion == null){
+      activeQuestion = <div style={{ marginRight: 260, padding: 20 }}></div>
+    }else {
+      
+      let buttons = []
+      for(let i = 0; i < this.state.activeQuestion.options.length; i++){
+        let question = this.state.activeQuestion.options[i]
+        buttons.push(
+          <Popup trigger={<Button>{question.title}</Button>}>
+            <Popup.Header>{question.title}</Popup.Header>
+            <Popup.Content>
+              {question.description}
+            </Popup.Content>
+          </Popup>
+        )
+        if(i < this.state.activeQuestion.options.length - 1){
+          buttons.push(<Button.Or />)
+        }
+      }
+      activeQuestion = (
+        <div style={{ marginRight: 260, padding: 20 }}>
+          <Embed icon='play' url='http://techslides.com/demos/sample-videos/small.mp4' />
+
+          <Divider />
+
+          <Container>
+            {this.state.activeQuestion.description}
+          </Container>
+
+          <Button.Group size='huge' fluid style={{ padding: '30px 0px' }}>
+            {buttons}
+          </Button.Group>
+        </div>
+      )
+    }
+    return (
+      <div style={{ width: '100vw', height: '100vh' }}>
+        <Sidebar direction='right' visible >
+          <Statistic.Group widths='1' style={{ paddingTop: 20 }}>
+            <Statistic>
+              <Statistic.Value>{this.state.algaeQuantity.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</Statistic.Value>
+              <Statistic.Label>m&sup2;</Statistic.Label>
+            </Statistic>
+          </Statistic.Group>
+        </Sidebar>
+
+        {activeQuestion}
+      </div>
+    )
+  }
 }
