@@ -14,19 +14,16 @@ const gameplay = {
       title: "Warm climate",
       description: "THis is a warm climate. as a bloom ou will do super well here",
       videoLocation: "drive://warm.mp4",
-      points: 10,
+      growth_factor: 3,
       HelpText: "OMG this is a warm climate"
     },
     coldClimate: {
-      title: "Cold climate",
-      videoLocation: "drive://cold.mp4",
-      points: -5,
-      leftButtonKey: "",
-      rightButtonKey: "",
-      leftButtonChoiceText: "",
-      rightButtonChoiceText: "",
-      HelpText: "Oh no this is a cold climate"
-    }
+      title: "cold climate",
+      description: "THis is a cold climate. as a bloom ou will do super well here JOKES IT WONT" ,
+      videoLocation: "drive://warm.mp4",
+      growth_factor: 0.5,
+      HelpText: "OMG this is a cold climate"
+    },
   },
     choices: [
       {
@@ -34,25 +31,25 @@ const gameplay = {
         eligible_areas:["river"],
         "description": "",
         "helpText": "",
-        optionA:{
+        options:[
+        {
           text:"leave them be",
-          score:2
-        },
-        optionB:{
+          effect:{"algae_survive":0.8, "growth_factor": 1, "long_term_growth_factor":1}
+        },{
           text:"shoo them away",
-          score:0.5
+          effect:{"algae_survive":0.8, "growth_factor": 1, "long_term_growth_factor":1}
         }
+      ]
       }
     ] ,
 
     random_events:[
-
       {
         "title": "there was a warm spell",
-        eligible_areas:["river,sea"],
+        eligible_areas:["river","sea"],
         "description": "",
         "helpText": "",
-        score:2
+        effect:{"algae_survive":0.8, "growth_factor": 1, "long_term_growth_factor":1}
       }
     ]
   }
