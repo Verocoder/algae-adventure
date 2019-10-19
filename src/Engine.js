@@ -2,62 +2,77 @@ import data from './gameplay.js';
 
 class Engine {
 
-  
-   // return either the next question or null to skip a question
+  constructor(location){
+    this.location_name = location;
+    this.question_list = build_question_list();
+    this.question_count = 0;
+    this.growth_factor = gameplay.locations[location].growth_factor;
+    this.algal_ceiling = gameplay.locations[location].algal_ceiling;
+    this.ongoingEffects = [];
+  }
+
+   // return the next question relevant to the location
+  //  always starting with the climate
+  // returns null after final question
     nextQuestion() {
-      console.log(gameplay)
-      return gameplay.climate;
+      let question = this.question_list[this.question_count];
+      this.question_count += 1;
+      return question;
     }
 
-    grow(currentAlgae, ongoingEffects){
-      return currentAlgae + 10;
+    // return the new algae count based on the previous count and any relevant effects
+    // will count new and existing effects, adding new ones to the existing list
+    grow(currentAlgae, newEffects){
+      let remove_indices = [];
+      let iteration_growth_factor = 1;
+      let iteration_algae_survive = 1;
+
+      for (effect in newEffects){
+        if (effect.duration === -1){
+          //special case for climate choice
+          this.growth_factor = this.growth_factor * effect.growth_factor;
+        } else {
+          this.ongoingEffects.push(effect);
+        }
+      }
+
+      for (var i=0; i<this.ongoingEffects.length; i++){
+        effect = this.ongoingEffects[i];
+        if (effect.duration === 0){
+          remove_indices.push(i);
+        } else {
+          effect.duration -= 1;
+          iteration_growth_factor = iteration_growth_factor * effect.growth_factor;
+          iteration_algae_survive = iteration_algae_survive * effect.algae_survive;
+        }
+      }
+
+      //this seems janky?
+      for (index in remove_indices){
+         this.ongoingEffects.reduce(index);
+      }
+
+      return (currentAlgae * iteration_algae_survive) ^ (this.growth_factor * iteration_growth_factor);
+    }
+
+    //this function will return random effects 
+    // that do not require a question
+    // they will be relevant to the location
+    get_random_effects(){
+      return [];
+    }
+
+    build_question_list(){
+      let question_list = [];
+      question_list.push(data.climate);
+      let random_questions = data.choices.sort(() => Math.random() - 0.5);
+      question_list.push(random_questions);
+      for (choice in data.choices){
+        if (choice.eligible_areas.includes(this.location_name)){
+          question_list.push(choice);
+        }
+      }
+      return question_list;
     }
 
 }
-
-  
-  // }
-
-  
-  // constructor(starting_size, location_name) {
-  //   //static imports
-  //   // sort out getting data
-  //   //constructor variables
-  //   this.starting_size = starting_size;
-  //   this.location = data.regions[location_name];
-
-  //   //class variables
-  //   this.current_count = starting_size;
-  //   this.growth_factor = this.location.growth_factor;
-  // }
-
-  // // events is a list of events
-  // iterate(events) {
-  //   let available_algae = this.current_count;
-  //   let growth_factor = this.growth_factor;
-  //   let resource_availability = this.location.resource_availability;
-
-  //   if (available_algae > this.location.algal_ceiling) {
-  //     available_algae = available_algae / 10;
-  //   }
-
-  //   for (event in events) {
-  //     if (event.algae_survive) {
-  //       available_algae = available_algae * event.algae_survive;
-  //     }
-  //     if (event.long_term_growth_factor) {
-  //       this.growth_factor = event.long_term_growth_factor;
-  //     }
-  //     if (event.growth_factor) {
-  //       growth_factor = growth_factor * event.growth_factor;
-  //     }
-  //   }
-
-  //   this.current_count = grow(available_algae, growth_factor);
-
-  //   return "I have calculated the new count as: " + this.current_count;
-  // }
-
-  // grow(available_algae, growth_factor) {
-  //   return available_algae ^ growth_factor;
-  // }
