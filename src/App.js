@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import 'semantic-ui-css/semantic.min.css'
-import { Button, Sidebar, Statistic, Container, Divider, Embed, Popup } from 'semantic-ui-react'
+import 'semantic-ui-less/semantic.less'
+import { Button, Sidebar, Statistic, Container, Divider, Embed, Popup, Header } from 'semantic-ui-react'
 import Engine from './Engine'
 
 export default class App extends React.Component {
@@ -42,7 +42,7 @@ componentDidMount(){
       for(let i = 0; i < this.state.activeQuestion.options.length; i++){
         let question = this.state.activeQuestion.options[i]
         buttons.push(
-          <Popup trigger={<Button>{question.title}</Button>}>
+          <Popup trigger={<Button primary>{question.title}</Button>}>
             <Popup.Header>{question.title}</Popup.Header>
             <Popup.Content>
               {question.description}
@@ -54,24 +54,27 @@ componentDidMount(){
         }
       }
       activeQuestion = (
-        <div style={{ marginRight: 260, padding: 20 }}>
-          <Embed icon='play' url='http://techslides.com/demos/sample-videos/small.mp4' />
+        <div style={{ marginRight: 150 }}>
+          <div style={{ maxWidth: 1000, padding: 20, marginLeft: 'auto', marginRight: 'auto' }}>
+            <Embed autoplay aspectRatio='16:9' icon='play' url='http://techslides.com/demos/sample-videos/small.mp4' />
 
-          <Divider />
+            <Divider />
 
-          <Container>
-            {this.state.activeQuestion.description}
-          </Container>
+            <Container fluid>
+              {this.state.activeQuestion.description}
+            </Container>
 
-          <Button.Group size='huge' fluid style={{ padding: '30px 0px' }}>
-            {buttons}
-          </Button.Group>
+            <Button.Group size='huge' fluid style={{ padding: '30px 0px' }}>
+              {buttons}
+            </Button.Group>
+          </div>
         </div>
       )
     }
     return (
       <div style={{ width: '100vw', height: '100vh' }}>
-        <Sidebar direction='right' visible >
+        <Sidebar direction='right' visible width='thin'>
+          <Header textAlign='center' size='large' style={{ paddingTop: 20 }}>Algae Adventures</Header>
           <Statistic.Group widths='1' style={{ paddingTop: 20 }}>
             <Statistic>
               <Statistic.Value>{this.state.algaeQuantity.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</Statistic.Value>
