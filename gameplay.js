@@ -5,6 +5,8 @@ const gameplay = {
     points: 10,
     leftButtonKey: "",
     rightButtonKey: "",
+    leftButtonChoiceText: "",
+    rightButtonChoiceText: "",
     HelpText: "OMG this is a warm climate"
   },
   coldClimate: {
@@ -13,6 +15,8 @@ const gameplay = {
     points: -5,
     leftButtonKey: "",
     rightButtonKey: "",
+    leftButtonChoiceText: "",
+    rightButtonChoiceText: "",
     HelpText: "Oh no this is a cold climate"
   }
 };
