@@ -3,7 +3,8 @@ const gameplay = {
     shallow_sea: {
       title: "Shallow Sea",
       description: "A shallow sea area near the coast",
-      media:"",
+      video: null,
+      image: "https://cff2.earth.com/uploads/2019/07/26121452/Algae-may-have-joined-with-fungi-to-give-rise-to-the-first-terrestrial-plants-730x410.jpg",
       helpText:
         "Shallow sea areas have some kind of feature that make them either good or not good for growing algae",
       image: "location of image",
@@ -14,7 +15,8 @@ const gameplay = {
   },
   climate: {
     title: "Cimate",
-    media:"",
+    video: null,
+    image:"https://cff2.earth.com/uploads/2019/07/26121452/Algae-may-have-joined-with-fungi-to-give-rise-to-the-first-terrestrial-plants-730x410.jpg",
     // all areas
     eligible_areas: ["river", "shallow_sea"],
     description: "",
@@ -22,7 +24,8 @@ const gameplay = {
     options: [
       {
         title: "warm",
-        media:"",
+        video: null,
+        image:"",
         description:
           "THis is a warm climate. as a bloom ou will do super well here",
         effect: {
@@ -33,7 +36,8 @@ const gameplay = {
       },
       {
         title: "cold",
-        media:"",
+        video: null,
+        image:"https://cff2.earth.com/uploads/2019/07/26121452/Algae-may-have-joined-with-fungi-to-give-rise-to-the-first-terrestrial-plants-730x410.jpg",
         description:
           "THis is a warm climate. as a bloom ou will do super well here",
         effect: {
@@ -47,14 +51,16 @@ const gameplay = {
   choices: [
     {
       title: "Some birds nest",
-      media:"",
+      video: null,
+      image:"",
       eligible_areas: ["river", "shallow_sea"],
       description: "",
       helpText: "",
       options: [
         {
           title: "shoe them away",
-          media:"",
+          video: null,
+          image:"",
           description: "",
           effect: {
             duration:0,
@@ -64,7 +70,8 @@ const gameplay = {
         },
         {
           title: "Let them stay",
-          media:"",
+          video: null,
+          image:"",
           description: "",
           effect: {
             duration:4,
