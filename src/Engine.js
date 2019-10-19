@@ -48,8 +48,8 @@ export default class Engine {
       }
 
       //this seems janky?
-      for (let index of remove_indices){
-         this.ongoingEffects.reduce(index);
+      for (index in remove_indices){
+         this.ongoingEffects.splice(index);
       }
 
       return (currentAlgae * iteration_algae_survive) ^ (this.growth_factor * iteration_growth_factor);
@@ -66,7 +66,7 @@ export default class Engine {
       let question_list = [];
       question_list.push(gameplay.climate);
       let random_questions = gameplay.choices.filter(choice => choice.eligible_areas.includes(this.location_name)).sort(() => Math.random() - 0.5);
-      question_list.push.apply(question_list, random_questions)
+      question_list.push.apply(question_list, random_questions);
       return question_list;
     }
 
