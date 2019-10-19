@@ -71,12 +71,22 @@ const gameplay = {
   random_events: [
     {
       title: "there was a warm spell",
-      eligible_areas: ["river", "sea"],
+      eligible_areas: ["river", "shallow_sea", "deep_sea"],
       description: "",
       helpText: "",
       effect: {
-        algae_survive: 0.8,
-        growth_factor: 1,
+        algae_survive: 1,
+        growth_factor: 2,
+        long_term_growth_factor: 1
+      }
+    },{
+      title: "there was a big storm",
+      eligible_areas: ["shallow_sea","deep_sea"],
+      description: "",
+      helpText: "",
+      effect: {
+        algae_survive: 0.6,
+        growth_factor: 0.5,
         long_term_growth_factor: 1
       }
     }
