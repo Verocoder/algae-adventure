@@ -14,11 +14,11 @@ const gameplay = {
   climate: {
     title: "Cimate",
     eligible_areas: ["river", "sea"],
-    description: "",
+    description: "What kind of weather do you feel your algae would bloom well in?",
     helpText: "",
     options: [
       {
-        title: "warm",
+        title: "Warm",
         description:
           "THis is a warm climate. as a bloom ou will do super well here",
         effect: {
@@ -28,7 +28,7 @@ const gameplay = {
         }
       },
       {
-        title: "cold",
+        title: "Cold",
         description:
           "THis is a warm climate. as a bloom ou will do super well here",
         effect: {
