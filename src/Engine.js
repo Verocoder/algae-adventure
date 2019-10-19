@@ -1,10 +1,10 @@
 import * as gameplay from './gameplay'
 
-class Engine {
+export default class Engine {
 
   constructor(location){
     this.location_name = location;
-    this.question_list = build_question_list();
+    this.question_list = this.build_question_list();
     this.question_count = 0;
     this.growth_factor = gameplay.locations[location].growth_factor;
     this.algal_ceiling = gameplay.locations[location].algal_ceiling;
@@ -27,7 +27,7 @@ class Engine {
       let iteration_growth_factor = 1;
       let iteration_algae_survive = 1;
 
-      for (effect in newEffects){
+      for (let effect of newEffects){
         if (effect.duration === -1){
           //special case for climate choice
           this.growth_factor = this.growth_factor * effect.growth_factor;
@@ -37,7 +37,7 @@ class Engine {
       }
 
       for (var i=0; i<this.ongoingEffects.length; i++){
-        effect = this.ongoingEffects[i];
+        let effect = this.ongoingEffects[i];
         if (effect.duration === 0){
           remove_indices.push(i);
         } else {
@@ -48,7 +48,7 @@ class Engine {
       }
 
       //this seems janky?
-      for (index in remove_indices){
+      for (let index of remove_indices){
          this.ongoingEffects.reduce(index);
       }
 
@@ -64,14 +64,9 @@ class Engine {
 
     build_question_list(){
       let question_list = [];
-      question_list.push(data.climate);
-      let random_questions = data.choices.sort(() => Math.random() - 0.5);
-      question_list.push(random_questions);
-      for (choice in data.choices){
-        if (choice.eligible_areas.includes(this.location_name)){
-          question_list.push(choice);
-        }
-      }
+      question_list.push(gameplay.climate);
+      let random_questions = gameplay.choices.filter(choice => choice.eligible_areas.includes(this.location_name)).sort(() => Math.random() - 0.5);
+      question_list.push.apply(question_list, random_questions)
       return question_list;
     }
 

@@ -2,6 +2,7 @@ import React from 'react'
 import 'semantic-ui-less/semantic.less'
 import {  Sidebar, Statistic, Header } from 'semantic-ui-react'
 import DecisionPrompt from './DecisionPrompt'
+import EnvironmentDecision from './EnvironmentDecision'
 import Engine from './Engine'
 
 export default class App extends React.Component {
@@ -17,26 +18,33 @@ export default class App extends React.Component {
       ongoingMultipliers: [],
     };
 
-    this.engine = new Engine();
+    this.engine = null;
+    this.selectLocation = this.selectLocation.bind(this)
   
   }
 
-  componentDidMount(){
+  /*componentDidMount(){
     this.advance()
+  }*/
+
+  tickWeek(){
+    
   }
 
-  advance(){
-    console.log(this.engine.nextQuestion());
+  selectLocation(e, locationId){
+    this.engine = new Engine(locationId);
     this.setState({activeQuestion: this.engine.nextQuestion()});
-    console.log(this.state)
   }
-
   
 
   render() {
     let activeQuestion;
     if(this.state.activeQuestion == null){
+      if(this.engine == null){
+        activeQuestion = <EnvironmentDecision onSelect={this.selectLocation}></EnvironmentDecision>
+      }else{
         activeQuestion = <div style={{ marginRight: 260, padding: 20 }}></div>
+      }
     }else {
       activeQuestion = <DecisionPrompt activeQuestion={this.state.activeQuestion}></DecisionPrompt>
     }
