@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import 'semantic-ui-less/semantic.less'
 import { Button, Sidebar, Statistic, Container, Divider, Embed } from 'semantic-ui-react'
 
@@ -25,9 +25,9 @@ const OptionsPage = () => {
       </Container>
 
       <Button.Group size='huge' fluid style={{ padding: '30px 0px' }}>
-        <Button>A</Button>
+        <Button primary>A</Button>
         <Button.Or />
-        <Button>B</Button>
+        <Button primary>B</Button>
       </Button.Group>
     </div>
   </div>
