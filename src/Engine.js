@@ -27,6 +27,10 @@ export default class Engine {
       let iteration_growth_factor = 1;
       let iteration_algae_survive = 1;
 
+      if (currentAlgae > this.algal_ceiling){
+        currentAlgae = currentAlgae / 20;
+      }
+
       for (let effect of newEffects){
         if (effect.duration === -1){
           //special case for climate choice

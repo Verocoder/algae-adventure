@@ -6,20 +6,48 @@ const gameplay = {
       image: "https://cff2.earth.com/uploads/2019/07/26121452/Algae-may-have-joined-with-fungi-to-give-rise-to-the-first-terrestrial-plants-730x410.jpg",
       helpText:
         "Shallow sea areas have some kind of feature that make them either good or not good for growing algae",
-      algal_ceiling: 10000,
-      growth_factor: 4,
-      resource_availability: 5
+      algal_ceiling: 1000000000000,
+      growth_factor: 4
     },
     deep_sea: {
-      title: "Shallow Sea",
+      title: "Deep Sea",
       description: "A shallow sea area near the coast",
       video: null,
       image: "https://cff2.earth.com/uploads/2019/07/26121452/Algae-may-have-joined-with-fungi-to-give-rise-to-the-first-terrestrial-plants-730x410.jpg",
       helpText:
         "Shallow sea areas have some kind of feature that make them either good or not good for growing algae",
-      algal_ceiling: 10000,
-      growth_factor: 4,
-      resource_availability: 5
+      algal_ceiling: 1000000000000000,
+      growth_factor: 5
+    },
+    lowland_river: {
+      title: "Lowland River",
+      description: "A shallow sea area near the coast",
+      video: null,
+      image: "https://cff2.earth.com/uploads/2019/07/26121452/Algae-may-have-joined-with-fungi-to-give-rise-to-the-first-terrestrial-plants-730x410.jpg",
+      helpText:
+        "Shallow sea areas have some kind of feature that make them either good or not good for growing algae",
+      algal_ceiling: 1000000000,
+      growth_factor: 4
+    },
+    upland_river: {
+      title: "Lowland River",
+      description: "A shallow sea area near the coast",
+      video: null,
+      image: "https://cff2.earth.com/uploads/2019/07/26121452/Algae-may-have-joined-with-fungi-to-give-rise-to-the-first-terrestrial-plants-730x410.jpg",
+      helpText:
+        "Shallow sea areas have some kind of feature that make them either good or not good for growing algae",
+      algal_ceiling: 1000000000,
+      growth_factor: 1
+    },
+    lake: {
+      title: "Lakes and Ponds",
+      description: "A shallow sea area near the coast",
+      video: null,
+      image: "https://cff2.earth.com/uploads/2019/07/26121452/Algae-may-have-joined-with-fungi-to-give-rise-to-the-first-terrestrial-plants-730x410.jpg",
+      helpText:
+        "Shallow sea areas have some kind of feature that make them either good or not good for growing algae",
+      algal_ceiling: 1000000,
+      growth_factor: 5
     }
   },
   climate: {
@@ -62,7 +90,7 @@ const gameplay = {
       title: "Some birds nest",
       video: null,
       image:"",
-      eligible_areas: ["river", "shallow_sea"],
+      eligible_areas: ["river", "lake"],
       description: "",
       helpText: "",
       options: [
@@ -90,8 +118,39 @@ const gameplay = {
         }
       ]
     },{
+      title: "Sewage",
+    video: null,
+    image:"",
+    eligible_areas: ["river", "lake"],
+    description: "A local sewage company want to use your lake for drainage, for a handsome price. ",
+    helpText: "",
+    options: [
+      {
+        title: "Let Them",
+        video: null,
+        image:"",
+        description: "",
+        effect: {
+          duration:28,
+          algae_survive: 1,
+          growth_factor: 10
+        }
+      },
+      {
+        title: "Say No",
+        video: null,
+        image:"",
+        description: "",
+        effect: {
+          duration:0,
+          algae_survive: 1,
+          growth_factor: 1
+        }
+      }
+    ]
+  },{
       title: "There was a warm spell",
-      eligible_areas: ["river", "shallow_sea", "deep_sea"],
+      eligible_areas: ["river", "lake", "shallow_sea", "deep_sea"],
       description: "",
       helpText: "",
       options: [ {
@@ -101,7 +160,7 @@ const gameplay = {
       }]
     },{
       title: "there was a big storm",
-      eligible_areas: ["shallow_sea","deep_sea"],
+      eligible_areas: ["river", "lake", "shallow_sea", "deep_sea"],
       description: "",
       helpText: "",
       options: [{
