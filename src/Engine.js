@@ -25,7 +25,7 @@ export default class Engine {
     // will count new and existing effects, adding new ones to the existing list
     grow(currentAlgae, newEffects){
       let remove_indices = [];
-      let iteration_growth_factor = 1;
+      let iteration_growth_factor = this.growth_factor;
       let iteration_algae_survive = 1;
 
       if (currentAlgae > this.algal_ceiling){
@@ -57,7 +57,7 @@ export default class Engine {
          this.ongoingEffects.splice(index);
       }
 
-      return (currentAlgae * iteration_algae_survive) * (1+(this.growth_factor * iteration_growth_factor));
+      return (currentAlgae * iteration_algae_survive) * (1+iteration_growth_factor/10);
     }
 
     build_question_list(weekCount){
