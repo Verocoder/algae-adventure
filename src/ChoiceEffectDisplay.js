@@ -9,7 +9,7 @@ export default class ChoiceEffectDisplay extends React.Component {
         super(props)
 
         this.state = {
-            advanceTimeoutSeconds: 5,
+            advanceTimeoutSeconds: (this.props.choice.effectDisplayTimeout ? this.props.choice.effectDisplayTimeout : 5),
             advancePercent: 0    
         };
         this.state.advanceTimeoutRemaining = this.state.advanceTimeoutSeconds;
