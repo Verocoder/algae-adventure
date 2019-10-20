@@ -46,7 +46,8 @@ export default class AlgaeMinimap extends React.Component {
                 }
             }
         }
-        oscCtx.putImageData(oscCtx, 0, 0)
+        oscCtx.putImageData(dstImageData, 0, 0)
+        return osc
     }
 
     drawCanvas(){
