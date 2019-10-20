@@ -1,4 +1,5 @@
 import React from 'react'
+import Moment from 'react-moment';
 import 'semantic-ui-less/semantic.less'
 import {  Sidebar, Statistic, Header, Progress } from 'semantic-ui-react'
 import DecisionPrompt from './DecisionPrompt'
@@ -81,7 +82,7 @@ export default class App extends React.Component {
     })
     
   }
-  
+
 
   render() {
     let activeContent;
@@ -114,6 +115,7 @@ export default class App extends React.Component {
             <Statistic>
               <Statistic.Label>Week</Statistic.Label>
               <Statistic.Value>{this.state.weekNumber}</Statistic.Value>
+              <Statistic.Label><Moment parse="YYYY-MM-DD" add={{weeks: this.state.weekNumber}} format="MMMM Do">2000-03-01</Moment></Statistic.Label>
             </Statistic>
           </Statistic.Group>
         </Sidebar>
