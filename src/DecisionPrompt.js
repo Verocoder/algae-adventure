@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Container, Divider, Header, Image, Popup } from 'semantic-ui-react'
+import { Button, Container, Segment, Header, Image, Popup } from 'semantic-ui-react'
 import ReactPlayer from 'react-player'
 
 export default class DecisionPrompt extends React.Component {
@@ -12,7 +12,6 @@ export default class DecisionPrompt extends React.Component {
     }
 
     onMediaEnd(){
-        console.log("Media ended");
         this.setState({mediaPlaying: false})
     }
 
@@ -34,14 +33,19 @@ export default class DecisionPrompt extends React.Component {
         }
         let decision = null
         if(!this.state.mediaPlaying){
+            let description = null;
+            if(this.props.activeQuestion.description){
+                description = (
+                    <Container fluid>
+                        <Segment raised>
+                            {this.props.activeQuestion.description}
+                        </Segment>
+                    </Container>
+                )
+            }
             decision = (
                 <Container fluid>
-                    <Divider />
-
-                    <Container fluid>
-                        <Header size="large">{this.props.activeQuestion.title}</Header>
-                        {this.props.activeQuestion.description}
-                    </Container>
+                    {description}
 
                     <Button.Group size='huge' fluid style={{ padding: '30px 0px' }}>
                     {buttons}
@@ -63,6 +67,7 @@ export default class DecisionPrompt extends React.Component {
         return (
             <div style={{ marginRight: 150 }}>
                 <div style={{ maxWidth: 1000, padding: 20, marginLeft: 'auto', marginRight: 'auto' }}>
+                    <Header size="large">{this.props.activeQuestion.title}</Header>
                     {media}
                     {decision}
                 </div>

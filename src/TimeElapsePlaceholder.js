@@ -1,6 +1,7 @@
 import React from 'react'
 import { Container, Header, Image, Progress, Segment } from 'semantic-ui-react'
 
+
 export default class TimeElapsePlaceholder extends React.Component {
     
 

@@ -1,11 +1,13 @@
 import React from 'react'
 import Moment from 'react-moment';
 import 'semantic-ui-less/semantic.less'
-import {  Sidebar, Statistic, Header, Progress } from 'semantic-ui-react'
+import {  Sidebar, Statistic, Header } from 'semantic-ui-react'
+import ChoiceEffectDisplay from './ChoiceEffectDisplay'
 import DecisionPrompt from './DecisionPrompt'
 import EnvironmentDecision from './EnvironmentDecision'
 import TimeElapsePlaceholder from './TimeElapsePlaceholder'
 import Engine from './Engine'
+import * as gameplay from './gameplay'
 
 export default class App extends React.Component {
   constructor(props){
@@ -52,17 +54,18 @@ export default class App extends React.Component {
 
   selectLocation(e, locationId){
     this.engine = new Engine(locationId, 28);
-    this.setState({activeQuestion: this.engine.nextQuestion()});
+    this.answerQuestion(null, gameplay.locations[locationId])
   }
 
-  answerQuestion(e, choice){
+  advance(choice){
     this.weekAdvanceTimeout = null;
     let effects = []
-    if(choice){
+    if(choice && choice.effect){
       effects.push(choice.effect)
     }
     this.setState(state => {
       let newState = {
+        choiceEffectDisplay: null,
         algaeQuantity: this.engine.grow(state.algaeQuantity, effects),
         weekNumber: state.weekNumber + 1
       }
@@ -80,6 +83,17 @@ export default class App extends React.Component {
       
       return newState;
     })
+  }
+
+  answerQuestion(e, choice){
+    if(choice && (choice.video || choice.image || choice.effectText)){
+      this.nextAdvanceCallback = this.advance.bind(this, choice)
+      this.setState({
+        choiceEffectDisplay: choice
+      });
+    }else{
+      this.advance(choice)
+    }
     
   }
 
@@ -87,7 +101,9 @@ export default class App extends React.Component {
   render() {
     let activeContent;
 
-    if(this.state.gameEnd){
+    if(this.state.choiceEffectDisplay){
+      activeContent = <ChoiceEffectDisplay choice={this.state.choiceEffectDisplay} onComplete={this.nextAdvanceCallback} />
+    }else if(this.state.gameEnd){
       activeContent = <div>Game End</div>
     } else if(this.state.activeQuestion == null){
       if(this.engine == null){
@@ -107,7 +123,7 @@ export default class App extends React.Component {
             <Statistic.Group widths='1' style={{ paddingTop: 20 }}>
             <Statistic>
               <Statistic.Label>Algae Volume</Statistic.Label>
-              <Statistic.Value>{this.state.algaeQuantity.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</Statistic.Value>
+              <Statistic.Value>{Math.round(this.state.algaeQuantity).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</Statistic.Value>
               <Statistic.Label>Tonnes</Statistic.Label>
             </Statistic>
           </Statistic.Group>
@@ -115,7 +131,7 @@ export default class App extends React.Component {
             <Statistic>
               <Statistic.Label>Week</Statistic.Label>
               <Statistic.Value>{this.state.weekNumber}</Statistic.Value>
-              <Statistic.Label><Moment parse="YYYY-MM-DD" add={{weeks: this.state.weekNumber}} format="MMMM Do">2000-03-01</Moment></Statistic.Label>
+              <Statistic.Label><Moment parse="YYYY-MM-DD" add={{weeks: this.state.weekNumber - 1}} format="MMMM Do">2000-03-01</Moment></Statistic.Label>
             </Statistic>
           </Statistic.Group>
         </Sidebar>
