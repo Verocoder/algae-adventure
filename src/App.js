@@ -122,7 +122,7 @@ export default class App extends React.Component {
 
     let minimap = null;
     if(this.state.activeLocation != null){
-      minimap = <AlgaeMinimap background={this.state.activeLocation.minimap} percent={this.state.algaeQuantity / this.state.activeLocation.algal_ceiling}  />
+      minimap = <AlgaeMinimap offset={this.state.activeLocation.minimap} percent={this.state.algaeQuantity / this.state.activeLocation.algal_ceiling}  />
     }
     
 

@@ -1,5 +1,5 @@
 import React from 'react'
-
+import minimapSprite from './images/algae-minimap-sprites.png'
 
 export default class AlgaeMinimap extends React.Component {
 
@@ -7,7 +7,7 @@ export default class AlgaeMinimap extends React.Component {
         super(props)
 
         //Props: 
-        // background
+        // offset
         // percent
         this.state = {
             canvasWidth: 1,
@@ -54,17 +54,17 @@ export default class AlgaeMinimap extends React.Component {
         const ctx = canvas.getContext("2d")
         const img = this.refs.image
         if(img.width){
-            ctx.drawImage(img, 0, 0)
-            /*if(typeof window.OffscreenCanvas !== "undefined"){
+            ctx.drawImage(img, 0, -(img.width * this.props.offset))
+            if(typeof window.OffscreenCanvas !== "undefined"){
                 let canvasMask = this.createWaterMask(ctx)
                 ctx.drawImage(canvasMask, 0, 0)
-            }*/
+            }
         }else{
             img.onload = () => {
                 if(img.width !== this.state.canvasWidth || img.height !== this.state.canvasHeight){
                     this.setState({
                         canvasWidth: img.width,
-                        canvasHeight: img.height
+                        canvasHeight: img.width
                     })
                     return
                 }
@@ -80,7 +80,7 @@ export default class AlgaeMinimap extends React.Component {
             <div style={{ padding: 20 }}>
                 <canvas ref="canvas" width={this.state.canvasWidth} height={this.state.canvasHeight} style={{width: "100%", height: "100%"}}></canvas>
                 <div style={{ width: 1, height: 1, overflow: "hidden"}}>
-                    <img ref="image" src={this.props.background} style={{visibility: "hidden"}} />
+                    <img ref="image" src={minimapSprite} style={{visibility: "hidden"}} />
                 </div>
             </div>
         )
