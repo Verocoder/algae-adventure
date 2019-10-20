@@ -55,13 +55,6 @@ export default class Engine {
       return (currentAlgae * iteration_algae_survive) ^ (this.growth_factor * iteration_growth_factor);
     }
 
-    //this function will return random effects 
-    // that do not require a question
-    // they will be relevant to the location
-    get_random_effects(){
-      return [];
-    }
-
     build_question_list(){
       let question_list = [];
       question_list.push(gameplay.climate);

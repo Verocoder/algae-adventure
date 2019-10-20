@@ -3,7 +3,6 @@ const gameplay = {
     shallow_sea: {
       title: "Shallow Sea",
       description: "A shallow sea area near the coast",
-      video: null,
       image: "https://cff2.earth.com/uploads/2019/07/26121452/Algae-may-have-joined-with-fungi-to-give-rise-to-the-first-terrestrial-plants-730x410.jpg",
       helpText:
         "Shallow sea areas have some kind of feature that make them either good or not good for growing algae",
@@ -79,32 +78,30 @@ const gameplay = {
           }
         }
       ]
-    }
-  ],
-
-  random_events: [
-    {
+    },{
       title: "There was a warm spell",
       eligible_areas: ["river", "shallow_sea", "deep_sea"],
       description: "",
       helpText: "",
-      effect: {
+      options: [ {
         duration:2,
         algae_survive: 1,
         growth_factor: 2
-      }
+      }]
     },{
       title: "there was a big storm",
       eligible_areas: ["shallow_sea","deep_sea"],
       description: "",
       helpText: "",
-      effect: {
+      options: [{
         duration:1,
         algae_survive: 0.6,
         growth_factor: 0.5
-      }
+      }]
     }
-  ]
+  ],
+
+  
 };
 
 module.exports = gameplay;
