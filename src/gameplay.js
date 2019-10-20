@@ -165,7 +165,7 @@ const gameplay = {
       helpText: "",
       options: [
         {
-          title: "shoe them away",
+          title: "Enjoy the Sunshine",
           video: null,
           image: "",
           description: "",
@@ -184,7 +184,7 @@ const gameplay = {
       helpText: "",
       options: [
         {
-          title: "shoe them away",
+          title: "Stay Indoors",
           video: null,
           image: "",
           description: "",
