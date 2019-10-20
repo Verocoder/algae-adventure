@@ -3,7 +3,7 @@ const gameplay = {
     shallow_sea: {
       title: "Shallow Sea",
       effectText: "",
-      description: "A shallow sea area near the coast",
+      description: "Shallow coastal seas are predominantly found at the coastlines of land masses. Many coastal citites have grown up around river estuaries and the sheltered waters that make them suitable for ports.",
       image:
         "https://cff2.earth.com/uploads/2019/07/26121452/Algae-may-have-joined-with-fungi-to-give-rise-to-the-first-terrestrial-plants-730x410.jpg",
       helpText:
@@ -14,7 +14,7 @@ const gameplay = {
     deep_sea: {
       title: "Deep Sea",
       effectText: "",
-      description: "A shallow sea area near the coast",
+      description: "Deep seas, such as those found far out from any land masses,are full of algae. However, the turbulent, relatively low nutrient conditions and cool temperatures mean that algal blooms are rare.",
       video: null,
       image:
         "https://cff2.earth.com/uploads/2019/07/26121452/Algae-may-have-joined-with-fungi-to-give-rise-to-the-first-terrestrial-plants-730x410.jpg",
@@ -24,9 +24,9 @@ const gameplay = {
       growth_factor: 1.5
     },
     lowland_river: {
-      title: "Lowland River",
+      title: "Lowland Rivers",
       effectText: "",
-      description: "A shallow sea area near the coast",
+      description: "Lowland rivers tend to run through relatively flat, fertile land, where much of the world's intensive agriculture takes place. Many inland cities have grown up around crossing points on lowland rivers.",
       video: null,
       image:
         "https://cff2.earth.com/uploads/2019/07/26121452/Algae-may-have-joined-with-fungi-to-give-rise-to-the-first-terrestrial-plants-730x410.jpg",
@@ -36,9 +36,9 @@ const gameplay = {
       growth_factor: 2
     },
     upland_river: {
-      title: "Lowland River",
+      title: "Upland River",
       effectText: "",
-      description: "A shallow sea area near the coast",
+      description: "Upland rivers tend to be shallow, fast flowing and cold. Many of them run through sparsely populated areas with steep landforms poorly suited to intensive agriculture.",
       video: null,
       image:
         "https://cff2.earth.com/uploads/2019/07/26121452/Algae-may-have-joined-with-fungi-to-give-rise-to-the-first-terrestrial-plants-730x410.jpg",
@@ -50,7 +50,7 @@ const gameplay = {
     lake: {
       title: "Lakes and Ponds",
       effectText: "",
-      description: "A shallow sea area near the coast",
+      description: "In spring and summer, the still waters in lakes warm up quickly. During times of heavy rainfall, nutrients can leach into the lake via soil washed away from the surrounding land",
       video: null,
       image:
         "https://cff2.earth.com/uploads/2019/07/26121452/Algae-may-have-joined-with-fungi-to-give-rise-to-the-first-terrestrial-plants-730x410.jpg",
@@ -61,7 +61,7 @@ const gameplay = {
     }
   },
   climate: {
-    title: "Cimate",
+    title: "Climate",
     video: null,
     image:
       "https://cff2.earth.com/uploads/2019/07/26121452/Algae-may-have-joined-with-fungi-to-give-rise-to-the-first-terrestrial-plants-730x410.jpg",
@@ -71,12 +71,12 @@ const gameplay = {
     helpText: "",
     options: [
       {
-        title: "warm",
-        effectText: "Warm weather will help algae grow",
+        title: "Warm Climate",
+        effectText: "Warm weather will help algae grow...",
         video: null,
         image: "",
         description:
-          "THis is a warm climate. as a bloom you will do super well here",
+          "This is a warm climate - as a bloom, you will do super well here",
         effect: {
           duration: -1,
           algae_survive: 1,
@@ -84,13 +84,13 @@ const gameplay = {
         }
       },
       {
-        title: "cold",
-        effectText: "Cooler weather slows the growth of algae",
+        title: "Cold Climate",
+        effectText: "Cooler weather slows the growth of algae...",
         video: null,
         image:
           "https://cff2.earth.com/uploads/2019/07/26121452/Algae-may-have-joined-with-fungi-to-give-rise-to-the-first-terrestrial-plants-730x410.jpg",
         description:
-          "THis is a warm climate. as a bloom ou will do super well here",
+          "This is a cold climate. as a bloom, you won't do as well here",
         effect: {
           duration: -1,
           algae_survive: 1,
@@ -101,7 +101,7 @@ const gameplay = {
   },
   choices: [
     {
-      title: "Some birds nest",
+      title: "Population Density",
       video: null,
       image: "",
       eligible_areas: ["upland_river", "lowland_river", "lake"],
@@ -109,11 +109,45 @@ const gameplay = {
       helpText: "",
       options: [
         {
-          title: "Shoe them away",
-          effectText: "The water stays clean with less for the algae to eat",
+          title: "High Population",
+          effectText: "Due to a growing population, cities are increasing in size, leading to an increase in sewage works leaking nutrient rich treated sewage into the rivers and seas. Intensive agriculture is also on the rise, meaning higher levels of fertiliser usage and increased soil run-off.",
           video: null,
           image: "",
-          description: "Shoe away the birds",
+          description: "Increase population",
+          effect: {
+            duration: 4,
+            algae_survive: 1,
+            growth_factor: 3
+          }
+        },
+        {
+          title: "Low Population",
+          effectText: "In countries where people live in relatively small communities, the discharge of sewage works has less of an impact on individual rivers and lakes. A lower intensity of agriculture and lower fertiliser usage also means lower soil run-off rates.",
+          video: null,
+          image: "",
+          description: "Decrease Population",
+          effect: {
+            duration: 4,
+            algae_survive: 1,
+            growth_factor: 1
+          }
+        }
+      ]
+    },
+    {
+      title: "Some geese decide to nest near your lake!",
+      video: null,
+      image: "",
+      eligible_areas: ["upland_river", "lowland_river", "lake"],
+      description: "",
+      helpText: "",
+      options: [
+        {
+          title: "Shoo them away",
+          effectText: "The water stays clean, with less for the algae to eat",
+          video: null,
+          image: "",
+          description: "Shoo away the birds",
           effect: {
             duration: 0,
             algae_survive: 1,
@@ -135,7 +169,7 @@ const gameplay = {
       ]
     },
     {
-      title: "Sewage",
+      title: "Sewage draining!",
       video: null,
       image: "",
       eligible_areas: ["upland_river", "lowland_river", "lake"],
@@ -170,7 +204,7 @@ const gameplay = {
       ]
     },
     {
-      title: "There was a warm spell",
+      title: "There was a warm spell!",
       eligible_areas: ["upland_river", "lowland_river", "lake", "shallow_sea", "deep_sea"],
       description: "",
       helpText: "",
@@ -190,7 +224,7 @@ const gameplay = {
       ]
     },
     {
-      title: "there was a big storm",
+      title: "There was a big storm!",
       eligible_areas: ["upland_river", "lowland_river", "lake", "shallow_sea", "deep_sea"],
       description: "",
       helpText: "",
@@ -198,7 +232,7 @@ const gameplay = {
         {
           title: "Stormy Weather",
           description: "Stormy Weather",
-          effectText: "Storms wash nutrients into the water from the land, helping algae to flourish",
+          effectText: "Storms wash nutrients into the water from the land, helping algae to flourish.",
           video: null,
           image: "",
           effect: {
@@ -210,14 +244,14 @@ const gameplay = {
       ]
     },
     {
-      title: "there was a cloudy period",
+      title: "There was a cloudy period!",
       eligible_areas: ["upland_river", "lowland_river", "lake", "shallow_sea", "deep_sea"],
       description: "",
       helpText: "",
       options: [
         {
           title: "Cloudy Weather",
-          effectText: "Clouds block the sun from reaching the waters surface which reduce the rate that blooms can grow at",
+          effectText: "Clouds block the sun from reaching the water's surface which reduces the rate that your bloom can grow at",
           video: null,
           image: "",
           description: "Cloudy Weather",
