@@ -1,14 +1,27 @@
 import React from 'react'
-import { Button, Container, Divider, Embed, Header, Popup } from 'semantic-ui-react'
+import { Button, Container, Divider, Header, Image, Popup } from 'semantic-ui-react'
+import ReactPlayer from 'react-player'
 
 export default class DecisionPrompt extends React.Component {
+
+    constructor(props){
+        super(props)
+        this.state = {
+            mediaPlaying: !!this.props.activeQuestion.video
+        }
+    }
+
+    onMediaEnd(){
+        console.log("Media ended");
+        this.setState({mediaPlaying: false})
+    }
 
     render(){
         let buttons = []
         for(let i = 0; i < this.props.activeQuestion.options.length; i++){
             let question = this.props.activeQuestion.options[i]
             buttons.push(
-            <Popup trigger={<Button primary onClick={(e) => this.props.onSelect(e, question, i)}>{question.title}</Button>}>
+            <Popup position='top center' trigger={<Button primary onClick={(e) => this.props.onSelect(e, question, i)}>{question.title}</Button>}>
                 <Popup.Header>{question.title}</Popup.Header>
                 <Popup.Content>
                 {question.description}
@@ -19,11 +32,10 @@ export default class DecisionPrompt extends React.Component {
                 buttons.push(<Button.Or />)
             }
         }
-        return (
-            <div style={{ marginRight: 150 }}>
-                <div style={{ maxWidth: 1000, padding: 20, marginLeft: 'auto', marginRight: 'auto' }}>
-                    <Embed autoplay aspectRatio='16:9' icon='play' url='http://techslides.com/demos/sample-videos/small.mp4' />
-
+        let decision = null
+        if(!this.state.mediaPlaying){
+            decision = (
+                <Container fluid>
                     <Divider />
 
                     <Container fluid>
@@ -34,6 +46,25 @@ export default class DecisionPrompt extends React.Component {
                     <Button.Group size='huge' fluid style={{ padding: '30px 0px' }}>
                     {buttons}
                     </Button.Group>
+                </Container>
+            )
+        }
+        let media = null;
+        if(this.props.activeQuestion.video){
+            media = (
+                <ReactPlayer playing={true} loop={false} url={this.props.activeQuestion.video} onEnded={this.onMediaEnd.bind(this)} onError={this.onMediaEnd.bind(this)}></ReactPlayer>
+            )
+        } else {
+            media = (
+                <Image src={this.props.activeQuestion.image} />
+            )
+        }
+
+        return (
+            <div style={{ marginRight: 150 }}>
+                <div style={{ maxWidth: 1000, padding: 20, marginLeft: 'auto', marginRight: 'auto' }}>
+                    {media}
+                    {decision}
                 </div>
             </div>
         )
