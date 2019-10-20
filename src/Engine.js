@@ -1,41 +1,73 @@
+import * as gameplay from './gameplay'
 
+export default class Engine {
 
-class Engine {
+  constructor(location){
+    this.location_name = location;
+    this.question_list = this.build_question_list();
+    this.question_count = 0;
+    this.growth_factor = gameplay.locations[location].growth_factor;
+    this.algal_ceiling = gameplay.locations[location].algal_ceiling;
+    this.ongoingEffects = [];
+  }
 
-    constructor(starting_size, location_name ) {
-        //static imports
-        this.data = require("./data.json");
-        //constructor variables
-        this.starting_size = starting_size;
-        this.location = data.regions[location_name];
+   // return the next question relevant to the location
+  //  always starting with the climate
+  // returns null after final question
+    nextQuestion() {
+      let question = this.question_list[this.question_count];
+      this.question_count += 1;
+      return question;
+    }
 
-        //class variables
-        this.current_count = starting_size;
-        
+    // return the new algae count based on the previous count and any relevant effects
+    // will count new and existing effects, adding new ones to the existing list
+    grow(currentAlgae, newEffects){
+      let remove_indices = [];
+      let iteration_growth_factor = 1;
+      let iteration_algae_survive = 1;
 
-    };
-
-    // events is a list of events 
-    iterate(events) {
-      let available_algae = this.current_count;
-      let growth_factor = this.location.growth_factor;
-      let resource_availability = this.location.resource_availability;
-
-      //TODO add if for cap
-
-      for (event in events){
-        available_algae = available_algae * event.kill_algae;
-        growth_factor = growth_factor * event.growth_factor
-        resource_availability = resource_availability * event.resource_availability
+      for (let effect of newEffects){
+        if (effect.duration === -1){
+          //special case for climate choice
+          this.growth_factor = this.growth_factor * effect.growth_factor;
+        } else {
+          this.ongoingEffects.push(effect);
+        }
       }
 
-      this.current_count = grow(growth_factor, resource_availability, available_algae);
+      for (var i=0; i<this.ongoingEffects.length; i++){
+        let effect = this.ongoingEffects[i];
+        if (effect.duration === 0){
+          remove_indices.push(i);
+        } else {
+          effect.duration -= 1;
+          iteration_growth_factor = iteration_growth_factor * effect.growth_factor;
+          iteration_algae_survive = iteration_algae_survive * effect.algae_survive;
+        }
+      }
 
-      return "I have calculated the new count as: " + this.current_count;
+      //this seems janky?
+      for (var index in remove_indices){
+         this.ongoingEffects.splice(index);
+      }
+
+      return (currentAlgae * iteration_algae_survive) ^ (this.growth_factor * iteration_growth_factor);
     }
 
-    grow(growth_factor, resource_availability, available_algae){
-      return available_algae^(growth_factor*resource_availability);
+    //this function will return random effects 
+    // that do not require a question
+    // they will be relevant to the location
+    get_random_effects(){
+      return [];
     }
 
-  }
+    build_question_list(){
+      let question_list = [];
+      question_list.push(gameplay.climate);
+      let random_questions = gameplay.choices.filter(choice => choice.eligible_areas.includes(this.location_name)).sort(() => Math.random() - 0.5);
+      question_list.push.apply(question_list, random_questions);
+      return question_list;
+    }
+
+}
