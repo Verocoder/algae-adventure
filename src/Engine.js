@@ -2,9 +2,10 @@ import * as gameplay from './gameplay'
 
 export default class Engine {
 
-  constructor(location){
+  constructor(location, weekCount){
+    this.weeklyChoiceChance = 0.3;
     this.location_name = location;
-    this.question_list = this.build_question_list();
+    this.question_list = this.build_question_list(weekCount);
     this.question_count = 0;
     this.growth_factor = gameplay.locations[location].growth_factor;
     this.algal_ceiling = gameplay.locations[location].algal_ceiling;
@@ -59,11 +60,18 @@ export default class Engine {
       return (currentAlgae * iteration_algae_survive) * (1+(this.growth_factor * iteration_growth_factor));
     }
 
-    build_question_list(){
+    build_question_list(weekCount){
       let question_list = [];
       question_list.push(gameplay.climate);
       let random_questions = gameplay.choices.filter(choice => choice.eligible_areas.includes(this.location_name)).sort(() => Math.random() - 0.5);
-      question_list.push.apply(question_list, random_questions);
+
+      for(let i = 1; i < weekCount; i++){
+        if(Math.random() < this.weeklyChoiceChance && random_questions.length >= 0){
+          question_list.push(random_questions.pop())
+        }else{
+          question_list.push(null)
+        }
+      }
       return question_list;
     }
 

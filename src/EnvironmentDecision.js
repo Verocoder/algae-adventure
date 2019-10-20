@@ -26,7 +26,9 @@ export default class DecisionPrompt extends React.Component {
         return (
             <div style={{ marginRight: 150 }}>
                 <div style={{ maxWidth: 1000, padding: 20, marginLeft: 'auto', marginRight: 'auto' }}>
-                    {locationCards}
+                    <Card.Group itemsPerRow="3" centered>
+                        {locationCards}
+                    </Card.Group>
                 </div>
             </div>
         )
