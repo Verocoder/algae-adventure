@@ -28,6 +28,10 @@ export default class Engine {
       let iteration_growth_factor = 1;
       let iteration_algae_survive = 1;
 
+      if (currentAlgae > this.algal_ceiling){
+        currentAlgae = currentAlgae / 20;
+      }
+
       for (let effect of newEffects){
         if (effect.duration === -1){
           //special case for climate choice
@@ -54,13 +58,6 @@ export default class Engine {
       }
 
       return (currentAlgae * iteration_algae_survive) ^ (this.growth_factor * iteration_growth_factor);
-    }
-
-    //this function will return random effects 
-    // that do not require a question
-    // they will be relevant to the location
-    get_random_effects(){
-      return [];
     }
 
     build_question_list(weekCount){
