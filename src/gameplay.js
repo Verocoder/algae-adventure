@@ -7,6 +7,7 @@ const gameplay = {
       description: "Shallow coastal seas are predominantly found at the coastlines of land masses. Many coastal citites have grown up around river estuaries and the sheltered waters that make them suitable for ports.",
       image: "https://github.com/Verocoder/algae-adventure/blob/master/src/images/shallow_sea.jpg?raw=true",
       video: "https://github.com/Verocoder/algae-adventure/blob/master/src/videos/shallow_seas.mp4?raw=true",
+        minimap: "https://raw.githubusercontent.com/Verocoder/algae-adventure/master/src/images/algae-minimap-shallow-sea.png",
       helpText:
         "Shallow sea areas have some kind of feature that make them either good or not good for growing algae",
       algal_ceiling: 1000000000000,
@@ -18,6 +19,7 @@ const gameplay = {
       description: "Deep seas, such as those found far out from any land masses,are full of algae. However, the turbulent, relatively low nutrient conditions and cool temperatures mean that algal blooms are rare.",
       image: "https://github.com/Verocoder/algae-adventure/blob/master/src/images/shallow_sea.jpg?raw=true",
       video: "https://github.com/Verocoder/algae-adventure/blob/master/src/videos/shallow_seas.mp4?raw=true",
+        minimap: "https://raw.githubusercontent.com/Verocoder/algae-adventure/master/src/images/algae-minimap-deep-sea.png",
       helpText:
         "Shallow sea areas have some kind of feature that make them either good or not good for growing algae",
       algal_ceiling: 1000000000000000,
@@ -29,6 +31,7 @@ const gameplay = {
       description: "Lowland rivers tend to run through relatively flat, fertile land, where much of the world's intensive agriculture takes place. Many inland cities have grown up around crossing points on lowland rivers.",
       image: "https://github.com/Verocoder/algae-adventure/blob/master/src/images/shallow_sea.jpg?raw=true",
       video: "https://github.com/Verocoder/algae-adventure/blob/master/src/videos/shallow_seas.mp4?raw=true",
+        minimap: "https://raw.githubusercontent.com/Verocoder/algae-adventure/master/src/images/algae-minimap-lowland-river.png",
       helpText:
         "Shallow sea areas have some kind of feature that make them either good or not good for growing algae",
       algal_ceiling: 250000,
@@ -40,6 +43,7 @@ const gameplay = {
       description: "Upland rivers tend to be shallow, fast flowing and cold. Many of them run through sparsely populated areas with steep landforms poorly suited to intensive agriculture.",
       image: "https://github.com/Verocoder/algae-adventure/blob/master/src/images/shallow_sea.jpg?raw=true",
       video: "https://github.com/Verocoder/algae-adventure/blob/master/src/videos/shallow_seas.mp4?raw=true",
+        minimap: "https://raw.githubusercontent.com/Verocoder/algae-adventure/master/src/images/algae-minimap-upland-river.png",
       helpText:
         "Shallow sea areas have some kind of feature that make them either good or not good for growing algae",
       algal_ceiling: 250000,
@@ -51,6 +55,7 @@ const gameplay = {
       description: "In spring and summer, the still waters in lakes warm up quickly. During times of heavy rainfall, nutrients can leach into the lake via soil washed away from the surrounding land",
       image: "https://github.com/Verocoder/algae-adventure/blob/master/src/images/shallow_sea.jpg?raw=true",
       video: "https://github.com/Verocoder/algae-adventure/blob/master/src/videos/shallow_seas.mp4?raw=true",
+        minimap: "/images/algae-minimap-lake.png",
       helpText:
         "Shallow sea areas have some kind of feature that make them either good or not good for growing algae",
       algal_ceiling: 50000,

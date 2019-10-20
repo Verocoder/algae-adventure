@@ -6,6 +6,7 @@ import ChoiceEffectDisplay from './ChoiceEffectDisplay'
 import DecisionPrompt from './DecisionPrompt'
 import EnvironmentDecision from './EnvironmentDecision'
 import TimeElapsePlaceholder from './TimeElapsePlaceholder'
+import AlgaeMinimap from './AlgaeMinimap'
 import Engine from './Engine'
 import * as gameplay from './gameplay'
 
@@ -23,6 +24,7 @@ export default class App extends React.Component {
       videoPlaying: null,
       ongoingMultipliers: [],
       gameEnd: false,
+      activeLocation: null
     };
 
     this.engine = null;
@@ -54,7 +56,10 @@ export default class App extends React.Component {
 
   selectLocation(e, locationId){
     this.engine = new Engine(locationId, 28);
-    this.answerQuestion(null, gameplay.locations[locationId])
+    let location = gameplay.locations[locationId];
+    this.setState({activeLocation: location})
+    this.answerQuestion(null, location)
+    
   }
 
   advance(choice){
@@ -114,6 +119,11 @@ export default class App extends React.Component {
     }else {
       activeContent = <DecisionPrompt activeQuestion={this.state.activeQuestion} onSelect={this.answerQuestion.bind(this)}></DecisionPrompt>
     }
+
+    let minimap = null;
+    if(this.state.activeLocation != null){
+      minimap = <AlgaeMinimap background={this.state.activeLocation.minimap} percent={this.state.algaeQuantity / this.state.activeLocation.algal_ceiling}  />
+    }
     
 
     return (
@@ -134,6 +144,7 @@ export default class App extends React.Component {
               <Statistic.Label><Moment parse="YYYY-MM-DD" add={{weeks: this.state.weekNumber - 1}} format="MMMM Do">2000-03-01</Moment></Statistic.Label>
             </Statistic>
           </Statistic.Group>
+          {minimap}
         </Sidebar>
 
         {activeContent}
