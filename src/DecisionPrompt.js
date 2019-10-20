@@ -56,7 +56,7 @@ export default class DecisionPrompt extends React.Component {
             )
         } else {
             media = (
-                <Image src={this.props.activeQuestion.image} />
+                <Image centered src={this.props.activeQuestion.image} />
             )
         }
 

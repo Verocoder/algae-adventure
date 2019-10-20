@@ -3,6 +3,7 @@ import 'semantic-ui-less/semantic.less'
 import {  Sidebar, Statistic, Header, Progress } from 'semantic-ui-react'
 import DecisionPrompt from './DecisionPrompt'
 import EnvironmentDecision from './EnvironmentDecision'
+import TimeElapsePlaceholder from './TimeElapsePlaceholder'
 import Engine from './Engine'
 
 export default class App extends React.Component {
@@ -14,7 +15,7 @@ export default class App extends React.Component {
       weekNumber: 0,
       secondsToWeekAdvance: 0,
       weekAdvancePercentage: 0,
-      weekAdvanceIntervalSeconds: 2,
+      weekAdvanceIntervalSeconds: 5,
       algaeQuantity: 1,
       videoPlaying: null,
       ongoingMultipliers: [],
@@ -22,13 +23,8 @@ export default class App extends React.Component {
     };
 
     this.engine = null;
-    //this.selectLocation = this.selectLocation.bind(this)
     this.weekAdvanceTimeout = null;
   }
-
-  /*componentDidMount(){
-    this.advance()
-  }*/
 
   componentWillUnmount(){
     if(this.weekAdvanceTimeout != null){
@@ -45,11 +41,10 @@ export default class App extends React.Component {
         weekAdvancePercentage: (state.weekAdvanceIntervalSeconds - (state.secondsToWeekAdvance - 1)) * 100 / state.weekAdvanceIntervalSeconds
       };
       if(newState.secondsToWeekAdvance <= 0){
-        this.weekAdvanceTimeout = setTimeout(this.answerQuestion.bind(this, null, null), 500);
+        this.weekAdvanceTimeout = setTimeout(this.answerQuestion.bind(this, null, null), 1000);
       }else{
         this.weekAdvanceTimeout = setTimeout(this.tickWeek.bind(this), 1000)
       }
-      console.log(newState);
       return newState;
     });
   }
@@ -89,21 +84,18 @@ export default class App extends React.Component {
   
 
   render() {
-    let activeQuestion;
-    let timeProgressIndicator = null
+    let activeContent;
 
     if(this.state.gameEnd){
-      activeQuestion = <div>Game End</div>
+      activeContent = <div>Game End</div>
     } else if(this.state.activeQuestion == null){
       if(this.engine == null){
-        activeQuestion = <EnvironmentDecision onSelect={this.selectLocation.bind(this)}></EnvironmentDecision>
+        activeContent = <EnvironmentDecision onSelect={this.selectLocation.bind(this)}></EnvironmentDecision>
       }else{
-        activeQuestion = <div style={{ marginRight: 260, padding: 20 }}></div>
-        timeProgressIndicator = <Progress percent={this.state.weekAdvancePercentage} size='tiny' />
-
+        activeContent = <TimeElapsePlaceholder percent={this.state.weekAdvancePercentage} />
       }
     }else {
-      activeQuestion = <DecisionPrompt activeQuestion={this.state.activeQuestion} onSelect={this.answerQuestion.bind(this)}></DecisionPrompt>
+      activeContent = <DecisionPrompt activeQuestion={this.state.activeQuestion} onSelect={this.answerQuestion.bind(this)}></DecisionPrompt>
     }
     
 
@@ -124,11 +116,9 @@ export default class App extends React.Component {
               <Statistic.Value>{this.state.weekNumber}</Statistic.Value>
             </Statistic>
           </Statistic.Group>
-          {timeProgressIndicator}
-
         </Sidebar>
 
-        {activeQuestion}
+        {activeContent}
       </div>
     )
   }
