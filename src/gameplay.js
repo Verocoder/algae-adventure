@@ -64,7 +64,7 @@ const gameplay = {
   climate: {
     title: "Climate",
     video: null,
-    image: "https://github.com/Verocoder/algae-adventure/blob/master/src/images/lilducks.jpg?raw=true",
+    image: "https://github.com/Verocoder/algae-adventure/blob/master/src/images/sun.jpg?raw=true",
     // all areas
       eligible_areas: ["upland_river", "lowland_river", "lake", "shallow_sea", "deep_sea"],
     description: "",
@@ -74,7 +74,7 @@ const gameplay = {
         title: "Warm Climate",
         effectText: "Warm weather will help algae grow...",
         video: null,
-        image: "https://github.com/Verocoder/algae-adventure/blob/master/src/images/lilducks.jpg?raw=true",
+        image: "https://github.com/Verocoder/algae-adventure/blob/master/src/images/sun.jpg?raw=true",
         description:
           "This is a warm climate - as a bloom, you will do super well here",
         effect: {
@@ -87,7 +87,7 @@ const gameplay = {
         title: "Cold Climate",
         effectText: "Cooler weather slows the growth of algae...",
         video: null,
-        image: "https://github.com/Verocoder/algae-adventure/blob/master/src/images/lilducks.jpg?raw=true",
+        image: "https://github.com/Verocoder/algae-adventure/blob/master/src/images/storm.webp?raw=true",
         description:
           "This is a cold climate. as a bloom, you won't do as well here",
         effect: {
@@ -212,7 +212,7 @@ const gameplay = {
           title: "Sunny Weather",
           effectText: "Warm sunny weather helps algae grow",
           video: null,
-          image: "",
+          image: "https://github.com/Verocoder/algae-adventure/blob/master/src/images/sun.jpg?raw=true",
           description: "Sunny Weather",
           effect: {
             duration: 2,
@@ -233,7 +233,7 @@ const gameplay = {
           description: "Stormy Weather",
           effectText: "Storms wash nutrients into the water from the land, helping algae to flourish.",
           video: null,
-          image: "",
+          image: "https://github.com/Verocoder/algae-adventure/blob/master/src/images/storm.webp?raw=true",
           effect: {
             duration: 1,
             algae_survive: 1,
