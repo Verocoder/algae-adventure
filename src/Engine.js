@@ -56,7 +56,7 @@ export default class Engine {
          this.ongoingEffects.splice(index);
       }
 
-      return (currentAlgae * iteration_algae_survive) ^ (this.growth_factor * iteration_growth_factor);
+      return (currentAlgae * iteration_algae_survive) * (1+(this.growth_factor * iteration_growth_factor));
     }
 
     build_question_list(){
