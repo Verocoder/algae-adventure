@@ -103,7 +103,7 @@ const gameplay = {
     {
       title: "Some birds nest",
       video: null,
-      image: "",
+      image: "%public%/images/lilducks.jpg",
       eligible_areas: ["upland_river", "lowland_river", "lake"],
       description: "",
       helpText: "",
@@ -112,7 +112,7 @@ const gameplay = {
           title: "Shoe them away",
           effectText: "The water stays clean with less for the algae to eat",
           video: null,
-          image: "",
+          image: "%public%/images/lilducks.jpg",
           description: "Shoe away the birds",
           effect: {
             duration: 0,
@@ -124,7 +124,7 @@ const gameplay = {
           title: "Let them stay",
           effectText: "Bird poo releases phosphates and nitrates that feed algae",
           video: null,
-          image: "",
+          image: "%public%/images/lilducks.jpg",
           description: "Keep the birds",
           effect: {
             duration: 4,
