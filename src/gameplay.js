@@ -1,3 +1,5 @@
+
+
 const gameplay = {
   locations: {
     shallow_sea: {
@@ -103,7 +105,7 @@ const gameplay = {
     {
       title: "Population Density",
       video: null,
-      image: "",
+      image: "%PUBLIC_URL%/images/lilducks.jpg",
       eligible_areas: ["upland_river", "lowland_river", "lake"],
       description: "",
       helpText: "",
@@ -158,7 +160,7 @@ const gameplay = {
           title: "Let them stay",
           effectText: "Bird poo releases phosphates and nitrates that feed algae",
           video: null,
-          image: "",
+          image: "%PUBLIC_URL%/images/lilducks.jpg",
           description: "Keep the birds",
           effect: {
             duration: 4,
@@ -171,7 +173,7 @@ const gameplay = {
     {
       title: "Sewage draining!",
       video: null,
-      image: "",
+      image: "%PUBLIC_URL_URL%/images/sewage.jpeg",
       eligible_areas: ["upland_river", "lowland_river", "lake"],
       description:
         "A local sewage company want to use your lake for drainage, for a handsome price. ",
@@ -181,7 +183,7 @@ const gameplay = {
           title: "Let Them",
           effectText: "The sewage feeds the algae and poisons the water",
           video: null,
-          image: "",
+          image: "%PUBLIC_URL%/images/sewage.jpeg",
           description: "Say Yes To Sewage",
           effect: {
             duration: 28,
@@ -193,7 +195,7 @@ const gameplay = {
           title: "Say No",
           effectText: "The sewage would have fed the algae and poisoned the water",
           video: null,
-          image: "",
+          image: "%PUBLIC_URL%/images/sewage.jpeg",
           description: "Say No To Sewage",
           effect: {
             duration: 0,
