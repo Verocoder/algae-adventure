@@ -1,0 +1,12 @@
+{
+    "regions":{
+        "shallow_sea":{
+            "algal_ceiling":10000, 
+            "growth_factor":4, 
+            "resource_availability":5
+        }
+    },
+    "events":{
+        "wash_off":{"algae_survive":0.8, "growth_factor": 1, "resource_availability":5}
+    }
+}

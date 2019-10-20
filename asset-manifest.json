@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/algae-adventure/static/css/main.34de6062.chunk.css",
+    "main.js": "/algae-adventure/static/js/main.5055ae7c.chunk.js",
+    "main.js.map": "/algae-adventure/static/js/main.5055ae7c.chunk.js.map",
+    "runtime-main.js": "/algae-adventure/static/js/runtime-main.a5ec1a3c.js",
+    "runtime-main.js.map": "/algae-adventure/static/js/runtime-main.a5ec1a3c.js.map",
+    "static/css/2.18dba977.chunk.css": "/algae-adventure/static/css/2.18dba977.chunk.css",
+    "static/js/2.65608a82.chunk.js": "/algae-adventure/static/js/2.65608a82.chunk.js",
+    "static/js/2.65608a82.chunk.js.map": "/algae-adventure/static/js/2.65608a82.chunk.js.map",
+    "index.html": "/algae-adventure/index.html",
+    "precache-manifest.d26f217be282d412b7378940b92df674.js": "/algae-adventure/precache-manifest.d26f217be282d412b7378940b92df674.js",
+    "service-worker.js": "/algae-adventure/service-worker.js",
+    "static/css/2.18dba977.chunk.css.map": "/algae-adventure/static/css/2.18dba977.chunk.css.map",
+    "static/css/main.34de6062.chunk.css.map": "/algae-adventure/static/css/main.34de6062.chunk.css.map",
+    "static/media/semantic.less": "/algae-adventure/static/media/outline-icons.ef60a4f6.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a5ec1a3c.js",
+    "static/css/2.18dba977.chunk.css",
+    "static/js/2.65608a82.chunk.js",
+    "static/css/main.34de6062.chunk.css",
+    "static/js/main.5055ae7c.chunk.js"
+  ]
+}
