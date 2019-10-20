@@ -66,7 +66,7 @@ export default class DecisionPrompt extends React.Component {
 
         return (
             <div style={{ marginRight: 150 }}>
-                <div style={{ maxWidth: 1000, padding: 20, marginLeft: 'auto', marginRight: 'auto' }}>
+                <div style={{ maxWidth: 850, padding: 20, marginLeft: 'auto', marginRight: 'auto' }}>
                     <Header size="large">{this.props.activeQuestion.title}</Header>
                     {media}
                     {decision}

@@ -1,7 +1,7 @@
 import React from 'react'
 import Moment from 'react-moment';
 import 'semantic-ui-less/semantic.less'
-import {  Sidebar, Statistic, Header } from 'semantic-ui-react'
+import {  Sidebar, Statistic, Header,Container, Image, Segment } from 'semantic-ui-react'
 import ChoiceEffectDisplay from './ChoiceEffectDisplay'
 import DecisionPrompt from './DecisionPrompt'
 import EnvironmentDecision from './EnvironmentDecision'
@@ -19,7 +19,7 @@ export default class App extends React.Component {
       weekNumber: 0,
       secondsToWeekAdvance: 0,
       weekAdvancePercentage: 0,
-      weekAdvanceIntervalSeconds: 5,
+      weekAdvanceIntervalSeconds: 2,
       algaeQuantity: 1,
       videoPlaying: null,
       ongoingMultipliers: [],
@@ -55,7 +55,7 @@ export default class App extends React.Component {
   }
 
   selectLocation(e, locationId){
-    this.engine = new Engine(locationId, 28);
+    this.engine = new Engine(locationId, 14);
     let location = gameplay.locations[locationId];
     this.setState({activeLocation: location})
     this.answerQuestion(null, location)
@@ -109,7 +109,17 @@ export default class App extends React.Component {
     if(this.state.choiceEffectDisplay){
       activeContent = <ChoiceEffectDisplay choice={this.state.choiceEffectDisplay} onComplete={this.nextAdvanceCallback} />
     }else if(this.state.gameEnd){
-      activeContent = <div>Game End</div>
+      activeContent = <div>
+      <Header size="large" centered>The Growing Season Ends</Header>
+      <Image centered src="https://cff2.earth.com/uploads/2019/07/26121452/Algae-may-have-joined-with-fungi-to-give-rise-to-the-first-terrestrial-plants-730x410.jpg" />
+      <Container fluid style={{ marginTop: 20 }}>
+        <Segment>
+            <p>The Algal Bloom reaches a total of {Math.round(this.state.algaeQuantity).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} tonnes and dies off.</p>
+            <p>It will return next year.</p>
+            <p>Algal Blooms like this produce toxins and consume oxygen and if they grow too large call kill of fish in the area.</p>
+          </Segment>
+        </Container>
+      </div>
     } else if(this.state.activeQuestion == null){
       if(this.engine == null){
         activeContent = <EnvironmentDecision onSelect={this.selectLocation.bind(this)}></EnvironmentDecision>
@@ -128,7 +138,7 @@ export default class App extends React.Component {
 
     return (
       <div style={{ width: '100vw', height: '100vh' }}>
-        <Sidebar direction='right' visible width='thin'>
+        <Sidebar direction='right' visible width='wide'>
           <Header textAlign='center' size='large' style={{ paddingTop: 20 }}>Algae Adventures</Header>
             <Statistic.Group widths='1' style={{ paddingTop: 20 }}>
             <Statistic>

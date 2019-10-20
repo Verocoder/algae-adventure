@@ -41,7 +41,7 @@ const gameplay = {
       title: "Upland River",
       effectText: "",
       description: "Upland rivers tend to be shallow, fast flowing and cold. Many of them run through sparsely populated areas with steep landforms poorly suited to intensive agriculture.",
-      image: "https://github.com/Verocoder/algae-adventure/blob/master/src/images/upland_river.jpg?raw=true",
+      image: "https://github.com/Verocoder/algae-adventure/blob/master/src/images/upland_river.png?raw=true",
       video: "https://github.com/Verocoder/algae-adventure/blob/master/src/videos/upland_river_2.mp4?raw=true",
         minimap: "https://raw.githubusercontent.com/Verocoder/algae-adventure/master/src/images/algae-minimap-upland-river.png",
       helpText:
@@ -55,7 +55,7 @@ const gameplay = {
       description: "In spring and summer, the still waters in lakes warm up quickly. During times of heavy rainfall, nutrients can leach into the lake via soil washed away from the surrounding land",
       image: "https://github.com/Verocoder/algae-adventure/blob/master/src/images/lakes.jpg?raw=true",
       video: "https://github.com/Verocoder/algae-adventure/blob/master/src/videos/lakes_ponds_2.mp4?raw=true",
-        minimap: "/images/algae-minimap-lake.png",
+        minimap: "https://raw.githubusercontent.com/Verocoder/algae-adventure/master/src/images/algae-minimap-lake.png",
       helpText:
         "Shallow sea areas have some kind of feature that make them either good or not good for growing algae",
       algal_ceiling: 50000,
@@ -112,7 +112,6 @@ const gameplay = {
           title: "High Population",
           effectText: "Due to a growing population, cities are increasing in size, leading to an increase in sewage works leaking nutrient rich treated sewage into the rivers and seas. Intensive agriculture is also on the rise, meaning higher levels of fertiliser usage and increased soil run-off.",
           video: "https://github.com/Verocoder/algae-adventure/blob/master/src/videos/high_pop.mp4?raw=true",
-          image: "https://github.com/Verocoder/algae-adventure/blob/master/src/images/lilducks.jpg?raw=true",
           description: "Increase population",
           effect: {
             duration: 4,
@@ -136,8 +135,7 @@ const gameplay = {
     },
     {
       title: "Some geese decide to nest near you!",
-      video: null,
-      image: "",
+      image: "https://github.com/Verocoder/algae-adventure/blob/master/src/images/lilducks.jpg?raw=true",
       eligible_areas: ["upland_river", "lowland_river", "lake","shallow sea"],
       description: "",
       helpText: "",
@@ -206,6 +204,7 @@ const gameplay = {
     {
       title: "There was a warm spell!",
       eligible_areas: ["upland_river", "lowland_river", "lake", "shallow_sea", "deep_sea"],
+      image: "https://github.com/Verocoder/algae-adventure/blob/master/src/images/sun.jpg?raw=true",
       description: "",
       helpText: "",
       options: [
@@ -226,6 +225,7 @@ const gameplay = {
     {
       title: "There was a big storm!",
       eligible_areas: ["upland_river", "lowland_river", "lake", "shallow_sea", "deep_sea"],
+      image: "https://github.com/Verocoder/algae-adventure/blob/master/src/images/storm.webp?raw=true",
       description: "",
       helpText: "",
       options: [
@@ -246,6 +246,7 @@ const gameplay = {
     {
       title: "There was a cloudy period!",
       eligible_areas: ["upland_river", "lowland_river", "lake", "shallow_sea", "deep_sea"],
+      image: "https://github.com/Verocoder/algae-adventure/blob/master/src/images/storm.webp?raw=true",
       description: "",
       helpText: "",
       options: [
