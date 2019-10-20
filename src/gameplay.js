@@ -61,7 +61,7 @@ const gameplay = {
     image:
       "https://cff2.earth.com/uploads/2019/07/26121452/Algae-may-have-joined-with-fungi-to-give-rise-to-the-first-terrestrial-plants-730x410.jpg",
     // all areas
-    eligible_areas: ["river", "shallow_sea"],
+      eligible_areas: ["upland_river", "lowland_river", "lake", "shallow_sea", "deep_sea"],
     description: "",
     helpText: "",
     options: [
@@ -70,7 +70,7 @@ const gameplay = {
         video: null,
         image: "",
         description:
-          "THis is a warm climate. as a bloom ou will do super well here",
+          "THis is a warm climate. as a bloom you will do super well here",
         effect: {
           duration: -1,
           algae_survive: 1,
@@ -97,7 +97,7 @@ const gameplay = {
       title: "Some birds nest",
       video: null,
       image: "",
-      eligible_areas: ["river", "lake"],
+      eligible_areas: ["upland_river", "lowland_river", "lake"],
       description: "",
       helpText: "",
       options: [
@@ -129,7 +129,7 @@ const gameplay = {
       title: "Sewage",
       video: null,
       image: "",
-      eligible_areas: ["river", "lake"],
+      eligible_areas: ["upland_river", "lowland_river", "lake"],
       description:
         "A local sewage company want to use your lake for drainage, for a handsome price. ",
       helpText: "",
@@ -160,7 +160,7 @@ const gameplay = {
     },
     {
       title: "There was a warm spell",
-      eligible_areas: ["river", "lake", "shallow_sea", "deep_sea"],
+      eligible_areas: ["upland_river", "lowland_river", "lake", "shallow_sea", "deep_sea"],
       description: "",
       helpText: "",
       options: [
@@ -179,7 +179,7 @@ const gameplay = {
     },
     {
       title: "there was a big storm",
-      eligible_areas: ["river", "lake", "shallow_sea", "deep_sea"],
+      eligible_areas: ["upland_river", "lowland_river", "lake", "shallow_sea", "deep_sea"],
       description: "",
       helpText: "",
       options: [
