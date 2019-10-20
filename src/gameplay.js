@@ -134,10 +134,10 @@ const gameplay = {
       ]
     },
     {
-      title: "Some geese decide to nest near your lake!",
+      title: "Some geese decide to nest near you!",
       video: null,
       image: "",
-      eligible_areas: ["upland_river", "lowland_river", "lake"],
+      eligible_areas: ["upland_river", "lowland_river", "lake","shallow sea"],
       description: "",
       helpText: "",
       options: [
