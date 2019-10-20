@@ -5,8 +5,8 @@ const gameplay = {
       title: "Shallow Sea",
       effectText: "",
       description: "Shallow coastal seas are predominantly found at the coastlines of land masses. Many coastal citites have grown up around river estuaries and the sheltered waters that make them suitable for ports.",
-      image:
-        "https://cff2.earth.com/uploads/2019/07/26121452/Algae-may-have-joined-with-fungi-to-give-rise-to-the-first-terrestrial-plants-730x410.jpg",
+      image: "https://github.com/Verocoder/algae-adventure/blob/master/src/images/shallow_sea.jpg?raw=true",
+      video: "https://github.com/Verocoder/algae-adventure/blob/master/src/videos/shallow_seas.mp4?raw=true",
         minimap: "https://raw.githubusercontent.com/Verocoder/algae-adventure/master/src/images/algae-minimap-shallow-sea.png",
       helpText:
         "Shallow sea areas have some kind of feature that make them either good or not good for growing algae",
@@ -17,9 +17,8 @@ const gameplay = {
       title: "Deep Sea",
       effectText: "",
       description: "Deep seas, such as those found far out from any land masses,are full of algae. However, the turbulent, relatively low nutrient conditions and cool temperatures mean that algal blooms are rare.",
-      video: null,
-      image:
-        "https://cff2.earth.com/uploads/2019/07/26121452/Algae-may-have-joined-with-fungi-to-give-rise-to-the-first-terrestrial-plants-730x410.jpg",
+      image: "https://github.com/Verocoder/algae-adventure/blob/master/src/images/shallow_sea.jpg?raw=true",
+      video: "https://github.com/Verocoder/algae-adventure/blob/master/src/videos/shallow_seas.mp4?raw=true",
         minimap: "https://raw.githubusercontent.com/Verocoder/algae-adventure/master/src/images/algae-minimap-deep-sea.png",
       helpText:
         "Shallow sea areas have some kind of feature that make them either good or not good for growing algae",
@@ -30,9 +29,8 @@ const gameplay = {
       title: "Lowland Rivers",
       effectText: "",
       description: "Lowland rivers tend to run through relatively flat, fertile land, where much of the world's intensive agriculture takes place. Many inland cities have grown up around crossing points on lowland rivers.",
-      video: null,
-      image:
-        "https://cff2.earth.com/uploads/2019/07/26121452/Algae-may-have-joined-with-fungi-to-give-rise-to-the-first-terrestrial-plants-730x410.jpg",
+      image: "https://github.com/Verocoder/algae-adventure/blob/master/src/images/shallow_sea.jpg?raw=true",
+      video: "https://github.com/Verocoder/algae-adventure/blob/master/src/videos/shallow_seas.mp4?raw=true",
         minimap: "https://raw.githubusercontent.com/Verocoder/algae-adventure/master/src/images/algae-minimap-lowland-river.png",
       helpText:
         "Shallow sea areas have some kind of feature that make them either good or not good for growing algae",
@@ -43,9 +41,8 @@ const gameplay = {
       title: "Upland River",
       effectText: "",
       description: "Upland rivers tend to be shallow, fast flowing and cold. Many of them run through sparsely populated areas with steep landforms poorly suited to intensive agriculture.",
-      video: null,
-      image:
-        "https://cff2.earth.com/uploads/2019/07/26121452/Algae-may-have-joined-with-fungi-to-give-rise-to-the-first-terrestrial-plants-730x410.jpg",
+      image: "https://github.com/Verocoder/algae-adventure/blob/master/src/images/shallow_sea.jpg?raw=true",
+      video: "https://github.com/Verocoder/algae-adventure/blob/master/src/videos/shallow_seas.mp4?raw=true",
         minimap: "https://raw.githubusercontent.com/Verocoder/algae-adventure/master/src/images/algae-minimap-upland-river.png",
       helpText:
         "Shallow sea areas have some kind of feature that make them either good or not good for growing algae",
@@ -56,10 +53,9 @@ const gameplay = {
       title: "Lakes and Ponds",
       effectText: "",
       description: "In spring and summer, the still waters in lakes warm up quickly. During times of heavy rainfall, nutrients can leach into the lake via soil washed away from the surrounding land",
-      video: null,
-      image:
-        "https://cff2.earth.com/uploads/2019/07/26121452/Algae-may-have-joined-with-fungi-to-give-rise-to-the-first-terrestrial-plants-730x410.jpg",
-        minimap: "https://raw.githubusercontent.com/Verocoder/algae-adventure/master/src/images/algae-minimap-lake.png",
+      image: "https://github.com/Verocoder/algae-adventure/blob/master/src/images/shallow_sea.jpg?raw=true",
+      video: "https://github.com/Verocoder/algae-adventure/blob/master/src/videos/shallow_seas.mp4?raw=true",
+        minimap: "/images/algae-minimap-lake.png",
       helpText:
         "Shallow sea areas have some kind of feature that make them either good or not good for growing algae",
       algal_ceiling: 50000,
@@ -139,10 +135,10 @@ const gameplay = {
       ]
     },
     {
-      title: "Some geese decide to nest near your lake!",
+      title: "Some geese decide to nest near you!",
       video: null,
       image: "",
-      eligible_areas: ["upland_river", "lowland_river", "lake"],
+      eligible_areas: ["upland_river", "lowland_river", "lake","shallow sea"],
       description: "",
       helpText: "",
       options: [
