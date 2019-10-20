@@ -1,4 +1,4 @@
-import * as gameplay from './gameplay'
+import {gameplay} from './gameplay'
 
 export default class Engine {
 

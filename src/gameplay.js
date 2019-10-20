@@ -1,5 +1,4 @@
 
-
 const gameplay = {
   locations: {
     shallow_sea: {
@@ -65,8 +64,7 @@ const gameplay = {
   climate: {
     title: "Cimate",
     video: null,
-    image:
-      "https://cff2.earth.com/uploads/2019/07/26121452/Algae-may-have-joined-with-fungi-to-give-rise-to-the-first-terrestrial-plants-730x410.jpg",
+    image: "https://github.com/Verocoder/algae-adventure/blob/master/src/images/lilducks.jpg?raw=true",
     // all areas
       eligible_areas: ["upland_river", "lowland_river", "lake", "shallow_sea", "deep_sea"],
     description: "",
@@ -76,7 +74,7 @@ const gameplay = {
         title: "warm",
         effectText: "Warm weather will help algae grow",
         video: null,
-        image: "",
+        image: "https://github.com/Verocoder/algae-adventure/blob/master/src/images/lilducks.jpg?raw=true",
         description:
           "THis is a warm climate. as a bloom you will do super well here",
         effect: {
@@ -89,8 +87,7 @@ const gameplay = {
         title: "cold",
         effectText: "Cooler weather slows the growth of algae",
         video: null,
-        image:
-          "https://cff2.earth.com/uploads/2019/07/26121452/Algae-may-have-joined-with-fungi-to-give-rise-to-the-first-terrestrial-plants-730x410.jpg",
+        image: "https://github.com/Verocoder/algae-adventure/blob/master/src/images/lilducks.jpg?raw=true",
         description:
           "THis is a warm climate. as a bloom ou will do super well here",
         effect: {
@@ -105,7 +102,7 @@ const gameplay = {
     {
       title: "Some birds nest",
       video: null,
-      image: "%PUBLIC_URL%/images/lilducks.jpg",
+      image: "https://github.com/Verocoder/algae-adventure/blob/master/src/images/lilducks.jpg?raw=true",
       eligible_areas: ["upland_river", "lowland_river", "lake"],
       description: "",
       helpText: "",
@@ -114,7 +111,7 @@ const gameplay = {
           title: "Shoe them away",
           effectText: "The water stays clean with less for the algae to eat",
           video: null,
-          image: "%PUBLIC_URL%/images/lilducks.jpg",
+          image: "https://github.com/Verocoder/algae-adventure/blob/master/src/images/lilducks.jpg?raw=true",
           description: "Shoe away the birds",
           effect: {
             duration: 0,
@@ -126,7 +123,7 @@ const gameplay = {
           title: "Let them stay",
           effectText: "Bird poo releases phosphates and nitrates that feed algae",
           video: null,
-          image: "%PUBLIC_URL%/images/lilducks.jpg",
+          image: "https://github.com/Verocoder/algae-adventure/blob/master/src/images/lilducks.jpg?raw=true",
           description: "Keep the birds",
           effect: {
             duration: 4,
@@ -139,7 +136,7 @@ const gameplay = {
     {
       title: "Sewage",
       video: null,
-      image: "%PUBLIC_URL_URL%/images/sewage.jpeg",
+      image: "https://github.com/Verocoder/algae-adventure/blob/master/src/images/lilducks.jpg?raw=true",
       eligible_areas: ["upland_river", "lowland_river", "lake"],
       description:
         "A local sewage company want to use your lake for drainage, for a handsome price. ",
@@ -149,7 +146,7 @@ const gameplay = {
           title: "Let Them",
           effectText: "The sewage feeds the algae and poisons the water",
           video: null,
-          image: "%PUBLIC_URL%/images/sewage.jpeg",
+          image: "https://github.com/Verocoder/algae-adventure/blob/master/src/images/lilducks.jpg?raw=true",
           description: "Say Yes To Sewage",
           effect: {
             duration: 28,
@@ -161,7 +158,7 @@ const gameplay = {
           title: "Say No",
           effectText: "The sewage would have fed the algae and poisoned the water",
           video: null,
-          image: "%PUBLIC_URL%/images/sewage.jpeg",
+          image: "https://github.com/Verocoder/algae-adventure/blob/master/src/images/lilducks.jpg?raw=true",
           description: "Say No To Sewage",
           effect: {
             duration: 0,
