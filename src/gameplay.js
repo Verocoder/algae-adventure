@@ -41,7 +41,7 @@ const gameplay = {
       title: "Upland River",
       effectText: "",
       description: "Upland rivers tend to be shallow, fast flowing and cold. Many of them run through sparsely populated areas with steep landforms poorly suited to intensive agriculture.",
-      image: "https://github.com/Verocoder/algae-adventure/blob/master/src/images/river.jpg?raw=true",
+      image: "https://github.com/Verocoder/algae-adventure/blob/master/src/images/upland_river.jpg?raw=true",
       video: "https://github.com/Verocoder/algae-adventure/blob/master/src/videos/upland_river_2.mp4?raw=true",
         minimap: "https://raw.githubusercontent.com/Verocoder/algae-adventure/master/src/images/algae-minimap-upland-river.png",
       helpText:
@@ -103,7 +103,7 @@ const gameplay = {
     {
       title: "Population Density",
       // video: "https://github.com/Verocoder/algae-adventure/blob/master/src/videos/high_pop.mp4?raw=true",
-      image: "https://github.com/Verocoder/algae-adventure/blob/master/src/images/lilducks.jpg?raw=true",
+      image: "https://github.com/Verocoder/algae-adventure/blob/master/src/images/city.jpg?raw=true",
       eligible_areas: ["upland_river", "lowland_river", "lake"],
       description: "",
       helpText: "",
