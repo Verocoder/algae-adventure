@@ -252,7 +252,7 @@ const gameplay = {
           title: "Cloudy Weather",
           effectText: "Clouds block the sun from reaching the water's surface which reduces the rate that your bloom can grow at",
           video: null,
-          image: "",
+          image: "https://github.com/Verocoder/algae-adventure/blob/master/src/images/storm.webp?raw=true",
           description: "Cloudy Weather",
           effect: {
             duration: 4,
