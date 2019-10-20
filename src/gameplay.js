@@ -8,6 +8,7 @@ const gameplay = {
       description: "A shallow sea area near the coast",
       image:
         "https://cff2.earth.com/uploads/2019/07/26121452/Algae-may-have-joined-with-fungi-to-give-rise-to-the-first-terrestrial-plants-730x410.jpg",
+        minimap: "https://raw.githubusercontent.com/Verocoder/algae-adventure/master/src/images/algae-minimap-shallow-sea.png",
       helpText:
         "Shallow sea areas have some kind of feature that make them either good or not good for growing algae",
       algal_ceiling: 1000000000000,
@@ -20,6 +21,7 @@ const gameplay = {
       video: null,
       image:
         "https://cff2.earth.com/uploads/2019/07/26121452/Algae-may-have-joined-with-fungi-to-give-rise-to-the-first-terrestrial-plants-730x410.jpg",
+        minimap: "https://raw.githubusercontent.com/Verocoder/algae-adventure/master/src/images/algae-minimap-deep-sea.png",
       helpText:
         "Shallow sea areas have some kind of feature that make them either good or not good for growing algae",
       algal_ceiling: 1000000000000000,
@@ -32,6 +34,7 @@ const gameplay = {
       video: null,
       image:
         "https://cff2.earth.com/uploads/2019/07/26121452/Algae-may-have-joined-with-fungi-to-give-rise-to-the-first-terrestrial-plants-730x410.jpg",
+        minimap: "https://raw.githubusercontent.com/Verocoder/algae-adventure/master/src/images/algae-minimap-lowland-river.png",
       helpText:
         "Shallow sea areas have some kind of feature that make them either good or not good for growing algae",
       algal_ceiling: 250000,
@@ -44,6 +47,7 @@ const gameplay = {
       video: null,
       image:
         "https://cff2.earth.com/uploads/2019/07/26121452/Algae-may-have-joined-with-fungi-to-give-rise-to-the-first-terrestrial-plants-730x410.jpg",
+        minimap: "https://raw.githubusercontent.com/Verocoder/algae-adventure/master/src/images/algae-minimap-upland-river.png",
       helpText:
         "Shallow sea areas have some kind of feature that make them either good or not good for growing algae",
       algal_ceiling: 250000,
@@ -56,6 +60,7 @@ const gameplay = {
       video: null,
       image:
         "https://cff2.earth.com/uploads/2019/07/26121452/Algae-may-have-joined-with-fungi-to-give-rise-to-the-first-terrestrial-plants-730x410.jpg",
+        minimap: "https://raw.githubusercontent.com/Verocoder/algae-adventure/master/src/images/algae-minimap-lake.png",
       helpText:
         "Shallow sea areas have some kind of feature that make them either good or not good for growing algae",
       algal_ceiling: 50000,
