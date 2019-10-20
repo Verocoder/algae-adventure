@@ -17,8 +17,8 @@ const gameplay = {
       title: "Deep Sea",
       effectText: "",
       description: "Deep seas, such as those found far out from any land masses,are full of algae. However, the turbulent, relatively low nutrient conditions and cool temperatures mean that algal blooms are rare.",
-      image: "https://github.com/Verocoder/algae-adventure/blob/master/src/images/shallow_sea.jpg?raw=true",
-      video: "https://github.com/Verocoder/algae-adventure/blob/master/src/videos/shallow_seas.mp4?raw=true",
+      image: "https://github.com/Verocoder/algae-adventure/blob/master/src/images/deep_sea.jpg?raw=true",
+      video: "https://github.com/Verocoder/algae-adventure/blob/master/src/videos/deep_seas.mp4?raw=true",
         minimap: "https://raw.githubusercontent.com/Verocoder/algae-adventure/master/src/images/algae-minimap-deep-sea.png",
       helpText:
         "Shallow sea areas have some kind of feature that make them either good or not good for growing algae",
@@ -29,8 +29,8 @@ const gameplay = {
       title: "Lowland Rivers",
       effectText: "",
       description: "Lowland rivers tend to run through relatively flat, fertile land, where much of the world's intensive agriculture takes place. Many inland cities have grown up around crossing points on lowland rivers.",
-      image: "https://github.com/Verocoder/algae-adventure/blob/master/src/images/shallow_sea.jpg?raw=true",
-      video: "https://github.com/Verocoder/algae-adventure/blob/master/src/videos/shallow_seas.mp4?raw=true",
+      image: "https://github.com/Verocoder/algae-adventure/blob/master/src/images/river.jpg?raw=true",
+      video: "https://github.com/Verocoder/algae-adventure/blob/master/src/videos/flowing_river_2.mp4?raw=true",
         minimap: "https://raw.githubusercontent.com/Verocoder/algae-adventure/master/src/images/algae-minimap-lowland-river.png",
       helpText:
         "Shallow sea areas have some kind of feature that make them either good or not good for growing algae",
@@ -41,8 +41,8 @@ const gameplay = {
       title: "Upland River",
       effectText: "",
       description: "Upland rivers tend to be shallow, fast flowing and cold. Many of them run through sparsely populated areas with steep landforms poorly suited to intensive agriculture.",
-      image: "https://github.com/Verocoder/algae-adventure/blob/master/src/images/shallow_sea.jpg?raw=true",
-      video: "https://github.com/Verocoder/algae-adventure/blob/master/src/videos/shallow_seas.mp4?raw=true",
+      image: "https://github.com/Verocoder/algae-adventure/blob/master/src/images/river.jpg?raw=true",
+      video: "https://github.com/Verocoder/algae-adventure/blob/master/src/videos/upland_river_2.mp4?raw=true",
         minimap: "https://raw.githubusercontent.com/Verocoder/algae-adventure/master/src/images/algae-minimap-upland-river.png",
       helpText:
         "Shallow sea areas have some kind of feature that make them either good or not good for growing algae",
@@ -53,8 +53,8 @@ const gameplay = {
       title: "Lakes and Ponds",
       effectText: "",
       description: "In spring and summer, the still waters in lakes warm up quickly. During times of heavy rainfall, nutrients can leach into the lake via soil washed away from the surrounding land",
-      image: "https://github.com/Verocoder/algae-adventure/blob/master/src/images/shallow_sea.jpg?raw=true",
-      video: "https://github.com/Verocoder/algae-adventure/blob/master/src/videos/shallow_seas.mp4?raw=true",
+      image: "https://github.com/Verocoder/algae-adventure/blob/master/src/images/lakes.jpg?raw=true",
+      video: "https://github.com/Verocoder/algae-adventure/blob/master/src/videos/lakes_ponds_2.mp4?raw=true",
         minimap: "/images/algae-minimap-lake.png",
       helpText:
         "Shallow sea areas have some kind of feature that make them either good or not good for growing algae",
@@ -74,7 +74,7 @@ const gameplay = {
       {
         title: "Warm Climate",
         effectText: "Warm weather will help algae grow...",
-        video: null,
+        video: "https://github.com/Verocoder/algae-adventure/blob/master/src/videos/warmer_climes.mp4?raw=true",
         image: "https://github.com/Verocoder/algae-adventure/blob/master/src/images/sun.jpg?raw=true",
         description:
           "This is a warm climate - as a bloom, you will do super well here",
@@ -87,7 +87,7 @@ const gameplay = {
       {
         title: "Cold Climate",
         effectText: "Cooler weather slows the growth of algae...",
-        video: null,
+        video: "https://github.com/Verocoder/algae-adventure/blob/master/src/videos/cooler_climes.mp4?raw=true",
         image: "https://github.com/Verocoder/algae-adventure/blob/master/src/images/storm.webp?raw=true",
         description:
           "This is a cold climate. as a bloom, you won't do as well here",
@@ -102,7 +102,7 @@ const gameplay = {
   choices: [
     {
       title: "Population Density",
-      video: null,
+      // video: "https://github.com/Verocoder/algae-adventure/blob/master/src/videos/high_pop.mp4?raw=true",
       image: "https://github.com/Verocoder/algae-adventure/blob/master/src/images/lilducks.jpg?raw=true",
       eligible_areas: ["upland_river", "lowland_river", "lake"],
       description: "",
@@ -111,7 +111,7 @@ const gameplay = {
         {
           title: "High Population",
           effectText: "Due to a growing population, cities are increasing in size, leading to an increase in sewage works leaking nutrient rich treated sewage into the rivers and seas. Intensive agriculture is also on the rise, meaning higher levels of fertiliser usage and increased soil run-off.",
-          video: null,
+          video: "https://github.com/Verocoder/algae-adventure/blob/master/src/videos/high_pop.mp4?raw=true",
           image: "https://github.com/Verocoder/algae-adventure/blob/master/src/images/lilducks.jpg?raw=true",
           description: "Increase population",
           effect: {
@@ -123,7 +123,7 @@ const gameplay = {
         {
           title: "Low Population",
           effectText: "In countries where people live in relatively small communities, the discharge of sewage works has less of an impact on individual rivers and lakes. A lower intensity of agriculture and lower fertiliser usage also means lower soil run-off rates.",
-          video: null,
+      video: "https://github.com/Verocoder/algae-adventure/blob/master/src/videos/low_pop.mp4?raw=true",
           image: "",
           description: "Decrease Population",
           effect: {
