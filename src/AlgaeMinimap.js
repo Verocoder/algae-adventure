@@ -55,10 +55,10 @@ export default class AlgaeMinimap extends React.Component {
         const img = this.refs.image
         if(img.width){
             ctx.drawImage(img, 0, 0)
-            if(typeof window.OffscreenCanvas !== "undefined"){
+            /*if(typeof window.OffscreenCanvas !== "undefined"){
                 let canvasMask = this.createWaterMask(ctx)
                 ctx.drawImage(canvasMask, 0, 0)
-            }
+            }*/
         }else{
             img.onload = () => {
                 if(img.width !== this.state.canvasWidth || img.height !== this.state.canvasHeight){
